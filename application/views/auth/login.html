@@ -137,6 +137,9 @@
   $( document ).ready(function() {
 
     setTimeout(function(){$('.preloader').fadeOut()}, 1000);
+    setInterval(function () {
+       $('.slick-next').trigger('click');
+    }, 4000);
 
     if($('#message').val()){
       if($('#code').val() == '3'){
