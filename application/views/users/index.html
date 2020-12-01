@@ -1,0 +1,882 @@
+{% extends "users/layout.html" %} {% block content %}
+    <!-- Home Page
+
+        <!-- ======= About Section ======= -->
+        <section id="about" class="about">
+          <div class="container">
+
+            <div class="section-title">
+              <h2>Tentang Kami</h2>
+            </div>
+
+            <div class="row content">
+              <div class="col-md-4">
+                <img src="{{base_url}}assets/valera/img/epantas.png" style="width: 95%;"></img>
+              </div>
+              <div class="col-md-8 pt-4 pt-lg-0" style="text-align: justify;">
+                <p>
+                  <b>e-pantas</b> adalah singkatan dari elektronik pangan berkualitas atau sebuah aplikasi berbasis website online yang berfungsi sebagai penampung data dan informasi dari hulu ke hilir sesuai dengan input data yang ada pada bidang pangan,
+                  e-pantas digunakan oleh unit kerja di bidang pangan atau internal yang digunakan sebagai penampung data dan informasi.
+                  disamping digunakan oleh bagian internal e-pantas juga terdaoat fungsi untuk external atau masyarakat umum diataranya :
+                  informasi yang dapat dilihat oleh masyarakat yang berkaitan dengan pangan berkualitas yang ada diprovinsi jawa barat
+                  informasi tentang isu dan tantangan bidang pangan dan informasi lainnya yang terdapat pada website e-pantas .
+                </p>
+                <!-- <a href="#" class="btn-learn-more">Learn More</a> -->
+                <br/>
+                <p>logo e-pantas memiliki makna sebagai berikut :</p>
+                <br/>
+                <ul>
+                  <li><i class="ri-check-double-line"></i> Petani tersenyum dengan baju khas Jawa Barat dan iket dengan motif mega mendung.</li>
+                  <li><i class="ri-check-double-line"></i> Lengan baju melipat ke atas melambangkan pekerja keras.</li>
+                  <li><i class="ri-check-double-line"></i> Tangan mengepal dan mengankat jempol melambangkan bentuk apresiasi sesuatu yg terbaik sembari menyodorkan padi yaitu pangan pokok masyarakat jawa barat.</li>
+                  <li><i class="ri-check-double-line"></i> Logo Jawa Barat dan kujang melambangkan identitas provinsi Jawa Barat.</li>
+                  <li><i class="ri-check-double-line"></i> Lingkaran melambangkan bumi yg hijau.</li>
+                  <li><i class="ri-check-double-line"></i> Warna biru di tengah melambangkan langit yg cerah.</li>
+                  <li><i class="ri-check-double-line"></i> Warna kuning melambangkan sinar matahari.</li>
+                  <li><i class="ri-check-double-line"></i> Gabungan simbol dengan warna khas jawa barat tersebut menggambarkan kita hidup di jawa barat yg subur.</li>
+                </ul>
+              </div>
+            </div>
+
+          </div>
+        </section><!-- End About Section -->
+
+        <!-- ======= Counts Section ======= -->
+        <section id="counts" class="counts">
+          <div class="container">
+
+            <div class="row counters">
+
+              <div class="col-lg-3 col-6 text-center">
+                <span data-toggle="counter-up">232</span>
+                <p>Luas Wilayah Pertanian</p>
+              </div>
+
+              <div class="col-lg-3 col-6 text-center">
+                <span data-toggle="counter-up">521</span>
+                <p>Total Hasil Pangan</p>
+              </div>
+
+              <div class="col-lg-3 col-6 text-center">
+                <span data-toggle="counter-up">1,463</span>
+                <p>Total Hortikultura</p>
+              </div>
+
+              <div class="col-lg-3 col-6 text-center">
+                <span data-toggle="counter-up">15</span>
+                <p>Jumalh Alat Produksi</p>
+              </div>
+
+            </div>
+
+          </div>
+        </section><!-- End Counts Section -->
+
+        <!-- ======= Our Values Section ======= -->
+        <section id="our-values" class="our-values" hidden>
+          <div class="container">
+
+            <div class="row">
+              <div class="col-md-6 d-flex align-items-stretch">
+                <div class="card" style='background-image: url("{{base_url}}assets/dokumen/gambar/Capture1.jpg");'>
+                  <div class="card-body">
+                    <h5 class="card-title"><a href="">Our Mission</a></h5>
+                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur elit, sed do eiusmod tempor ut labore et dolore magna aliqua.</p>
+                    <div class="read-more"><a href="#"><i class="icofont-arrow-right"></i> Read More</a></div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6 d-flex align-items-stretch mt-4 mt-md-0">
+                <div class="card" style='background-image: url("{{base_url}}assets/dokumen/gambar/image-1.jpg");'>
+                  <div class="card-body">
+                    <h5 class="card-title"><a href="">Our Plan</a></h5>
+                    <p class="card-text">Sed ut perspiciatis unde omnis iste natus error sit voluptatem doloremque laudantium, totam rem.</p>
+                    <div class="read-more"><a href="#"><i class="icofont-arrow-right"></i> Read More</a></div>
+                  </div>
+                </div>
+
+              </div>
+              <div class="col-md-6 d-flex align-items-stretch mt-4">
+                <div class="card" style='background-image: url("{{base_url}}assets/dokumen/gambar/image-2.jpg");'>
+                  <div class="card-body">
+                    <h5 class="card-title"><a href="">Our Vision</a></h5>
+                    <p class="card-text">Nemo enim ipsam voluptatem quia voluptas sit aut odit aut fugit, sed quia magni dolores.</p>
+                    <div class="read-more"><a href="#"><i class="icofont-arrow-right"></i> Read More</a></div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6 d-flex align-items-stretch mt-4">
+                <div class="card" style='background-image: url("{{base_url}}assets/dokumen/gambar/simpok.jpg");'>
+                  <div class="card-body">
+                    <h5 class="card-title"><a href="">Our Care</a></h5>
+                    <p class="card-text">Nostrum eum sed et autem dolorum perspiciatis. Magni porro quisquam laudantium voluptatem.</p>
+                    <div class="read-more"><a href="#"><i class="icofont-arrow-right"></i> Read More</a></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </section><!-- End Our Values Section -->
+
+        <!-- ======= Clients Section ======= -->
+        <section id="clients" class="clients section-bg">
+          <div class="container">
+
+            <div class="row">
+
+              <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center">
+                <!-- <img src="{{base_url}}assets/valera/img/clients/client-1.png" class="img-fluid" alt=""> -->
+                <img src="https://apbd.jabarprov.go.id/assets/plugins/logo_daerah/logo_jabar.png" class="img-fluid" alt="">
+              </div>
+
+              <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center">
+                <!-- <img src="{{base_url}}assets/valera/img/clients/client-2.png" class="img-fluid" alt=""> -->
+                <img src="https://apbd.jabarprov.go.id/assets/plugins/logo_daerah/logo_jabar.png" class="img-fluid" alt="">
+
+              </div>
+
+              <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center">
+                <!-- <img src="{{base_url}}assets/valera/img/clients/client-3.png" class="img-fluid" alt=""> -->
+                <img src="https://apbd.jabarprov.go.id/assets/plugins/logo_daerah/logo_jabar.png" class="img-fluid" alt="">
+
+              </div>
+
+              <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center">
+                <!-- <img src="{{base_url}}assets/valera/img/clients/client-4.png" class="img-fluid" alt=""> -->
+                <img src="https://apbd.jabarprov.go.id/assets/plugins/logo_daerah/logo_jabar.png" class="img-fluid" alt="">
+
+              </div>
+
+              <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center">
+                <!-- <img src="{{base_url}}assets/valera/img/clients/client-5.png" class="img-fluid" alt=""> -->
+                <img src="https://apbd.jabarprov.go.id/assets/plugins/logo_daerah/logo_jabar.png" class="img-fluid" alt="">
+
+              </div>
+
+              <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center">
+                <!-- <img src="{{base_url}}assets/valera/img/clients/client-6.png" class="img-fluid" alt=""> -->
+                <img src="https://apbd.jabarprov.go.id/assets/plugins/logo_daerah/logo_jabar.png" class="img-fluid" alt="">
+
+              </div>
+
+            </div>
+
+          </div>
+        </section><!-- End Clients Section -->
+
+        <!-- ======= Services Section ======= -->
+        <section id="services" class="services">
+          <div class="container">
+
+            <div class="section-title">
+              <h2>Pelayanan</h2>
+              <p>Berisi Informasi Layanan Dinas terkait Data Pertanian.</p>
+            </div>
+
+            <div class="row">
+              <div class="col-lg-4 col-md-6">
+                <div class="icon-box" style="border: 2px solid #00afef;">
+                  <div class=""><img src="{{base_url}}assets/dokumen/gambar/1.png" style="width:50%;"></img></div>
+                  <h4 class="title"><a href="">Lorem Ipsum</a></h4>
+                  <p class="description">Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident</p>
+                </div>
+              </div>
+              <div class="col-lg-4 col-md-6 mt-4 mt-md-0">
+                <div class="icon-box" style="border: 2px solid #00afef;">
+                  <div class=""><img src="{{base_url}}assets/dokumen/gambar/2.png" style="width:50%;"></img></div>
+                  <h4 class="title"><a href="">Dolor Sitema</a></h4>
+                  <p class="description">Minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat tarad limino ata</p>
+                </div>
+              </div>
+
+              <div class="col-lg-4 col-md-6 mt-4 mt-lg-0">
+                <div class="icon-box" style="border: 2px solid #00afef;">
+                  <div class=""><img src="{{base_url}}assets/dokumen/gambar/3.png" style="width:50%;"></img></div>
+                  <h4 class="title"><a href="">Sed ut perspiciatis</a></h4>
+                  <p class="description">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur</p>
+                </div>
+              </div>
+              <div class="col-lg-4 col-md-6 mt-4">
+                <div class="icon-box" style="border: 2px solid #00afef;">
+                  <div class=""><img src="{{base_url}}assets/dokumen/gambar/4.png" style="width:50%;"></img></div>
+                  <h4 class="title"><a href="">Magni Dolores</a></h4>
+                  <p class="description">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
+                </div>
+              </div>
+
+              <div class="col-lg-4 col-md-6 mt-4">
+                <div class="icon-box" style="border: 2px solid #00afef;">
+                  <div class=""><img src="{{base_url}}assets/dokumen/gambar/5.png" style="width:50%;"></img></div>
+                  <h4 class="title"><a href="">Nemo Enim</a></h4>
+                  <p class="description">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque</p>
+                </div>
+              </div>
+              <div class="col-lg-4 col-md-6 mt-4">
+                <div class="icon-box" style="border: 2px solid #00afef;">
+                  <div class=""><img src="{{base_url}}assets/dokumen/gambar/6.png" style="width:50%;"></img></div>
+                  <h4 class="title"><a href="">Eiusmod Tempor</a></h4>
+                  <p class="description">Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi</p>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </section><!-- End Services Section -->
+
+        <section id="issue" class="our-values">
+          <div class="container">
+            <div class="section-title">
+              <h2>Isu dan Tantangan</h2>
+              <p>Berisi tentang artikel atau tulisan tentang ISU, TANTANGAN dan STRATEGI di bidang pangan.</p>
+            </div>
+
+            <div class="row" id="list-issue">
+              <!-- <div class="col-md-6 d-flex align-items-stretch">
+                <div class="card" style="width: 25rem; padding-top:0px !important; text-align:left;">
+                  <img src="{{base_url}}assets/img/issue/8f3f41fa5c9b0f71252a612cc29dd8be.png" alt="" class="card-img-top">
+                  <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text mb-2">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    <div class="read-more text-right"><a href="#"><i class="icofont-arrow-right"></i> Read More</a></div>
+                  </div>
+                </div>
+              </div> -->
+            </div>
+            <div class="col-12" style="margin-top: 1.5em;">
+                <ul class="pagination justify-content-center">
+                    <li class="page-item">
+                        <a class="page-link" href="javascript:prevPage_isu()" id="btn_prev_isu"><i class="icofont-arrow-left"></i></a>
+                    </li>
+                    <li class="page-item active"><a class="page-link" href="#"><span id="page_isu">1</span></a></li>
+                    <li class="page-item">
+                        <a class="page-link" href="javascript:nextPage_isu()" id="btn_next_isu" ><i class="icofont-arrow-right"></i></a>
+                    </li>
+                </ul>
+            </div>
+
+          </div>
+        </section><!-- End Our Values Section -->
+
+        <!-- ======= Testimonials Section ======= -->
+        <section id="testimonials" class="testimonials section-bg" hidden>
+          <div class="container">
+
+            <div class="section-title">
+              <h2>Komentar Masyarakat</h2>
+              <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+            </div>
+
+            <div class="owl-carousel testimonials-carousel">
+
+              <div class="testimonial-item">
+                <p style="border: 2px solid #00afef;">
+                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                  Proin iaculis purus consequat sem cure digni ssim donec porttitora entum suscipit rhoncus. Accusantium quam, ultricies eget id, aliquam eget nibh et. Maecen aliquam, risus at semper.
+                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                </p>
+                <img src="{{base_url}}assets/valera/img/testimonials/testimonials-1.jpg" class="testimonial-img" alt="">
+                <h3>Saul Goodman</h3>
+                <h4>Ceo &amp; Founder</h4>
+              </div>
+
+              <div class="testimonial-item">
+                <p style="border: 2px solid #00afef;">
+                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                  Export tempor illum tamen malis malis eram quae irure esse labore quem cillum quid cillum eram malis quorum velit fore eram velit sunt aliqua noster fugiat irure amet legam anim culpa.
+                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                </p>
+                <img src="{{base_url}}assets/valera/img/testimonials/testimonials-2.jpg" class="testimonial-img" alt="">
+                <h3>Sara Wilsson</h3>
+                <h4>Designer</h4>
+              </div>
+
+              <div class="testimonial-item">
+                <p style="border: 2px solid #00afef;">
+                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                  Enim nisi quem export duis labore cillum quae magna enim sint quorum nulla quem veniam duis minim tempor labore quem eram duis noster aute amet eram fore quis sint minim.
+                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                </p>
+                <img src="{{base_url}}assets/valera/img/testimonials/testimonials-3.jpg" class="testimonial-img" alt="">
+                <h3>Jena Karlis</h3>
+                <h4>Store Owner</h4>
+              </div>
+
+              <div class="testimonial-item">
+                <p style="border: 2px solid #00afef;">
+                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                  Fugiat enim eram quae cillum dolore dolor amet nulla culpa multos export minim fugiat minim velit minim dolor enim duis veniam ipsum anim magna sunt elit fore quem dolore labore illum veniam.
+                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                </p>
+                <img src="{{base_url}}assets/valera/img/testimonials/testimonials-4.jpg" class="testimonial-img" alt="">
+                <h3>Matt Brandon</h3>
+                <h4>Freelancer</h4>
+              </div>
+
+              <div class="testimonial-item">
+                <p style="border: 2px solid #00afef;">
+                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                  Quis quorum aliqua sint quem legam fore sunt eram irure aliqua veniam tempor noster veniam enim culpa labore duis sunt culpa nulla illum cillum fugiat legam esse veniam culpa fore nisi cillum quid.
+                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                </p>
+                <img src="{{base_url}}assets/valera/img/testimonials/testimonials-5.jpg" class="testimonial-img" alt="">
+                <h3>John Larson</h3>
+                <h4>Entrepreneur</h4>
+              </div>
+
+            </div>
+
+          </div>
+        </section><!-- End Testimonials Section -->
+
+        <!-- ======= Cta Section ======= -->
+        <section id="cta" class="cta" hidden>
+          <div class="container">
+
+            <div class="text-center">
+              <h3>Call To Action</h3>
+              <p> Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+              <a class="cta-btn" href="#">Call To Action</a>
+            </div>
+
+          </div>
+        </section><!-- End Cta Section -->
+
+        <!-- ======= Portfolio Section ======= -->
+        <section id="portfolio" class="portfolio">
+          <div class="container">
+
+            <div class="section-title">
+              <h2>Pangan dan Hortikultura</h2>
+              <p>Berisi tentang data-data komoditas pangan berkualitas yang ada di provinsi Jawa barat.</p>
+            </div>
+
+            <ul class="portfolio-flters d-flex justify-content-center" id="pilih-filter">
+              <!-- <li data-filter="*" class="filter-active">All</li>
+              <li data-filter=".filter-app">App</li>
+              <li data-filter=".filter-card">Card</li>
+              <li data-filter=".filter-web">Web</li> -->
+            </ul>
+
+            <div class="row portfolio-container" id="content-filter">
+
+              <!-- <div class="col-lg-4 col-md-6 portfolio-item filterDiv Ciherang" hidden>
+                <div class="portfolio-img"><img src="{{base_url}}assets/dokumen/gambar/portfolio/bawang-merah.jpg" class="img-fluid" alt=""></div>
+                <div class="portfolio-info">
+                  <h4>App 1</h4>
+                  <p>App</p>
+                  <a href="{{base_url}}assets/dokumen/gambar/portfolio/bawang-merah.jpg" data-gall="portfolioGallery" class="venobox preview-link" title="App 1"><i class="bx bx-plus"></i></a>
+                  <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
+                </div>
+              </div>
+
+              <div class="col-lg-4 col-md-6 portfolio-item filterDiv Inbrida" hidden>
+                <div class="portfolio-img"><img src="{{base_url}}assets/dokumen/gambar/portfolio/durian.jpg" class="img-fluid" alt=""></div>
+                <div class="portfolio-info">
+                  <h4>Web 3</h4>
+                  <p>Web</p>
+                  <a href="{{base_url}}assets/dokumen/gambar/portfolio/durian.jpg" data-gall="portfolioGallery" class="venobox preview-link" title="Web 3"><i class="bx bx-plus"></i></a>
+                  <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
+                </div>
+              </div>
+
+              <div class="col-lg-4 col-md-6 portfolio-item filter-app filterDiv">
+                <div class="portfolio-img"><img src="{{base_url}}assets/dokumen/gambar/portfolio/jagung.jpg" class="img-fluid" alt=""></div>
+                <div class="portfolio-info">
+                  <h4>App 2</h4>
+                  <p>App</p>
+                  <a href="{{base_url}}assets/dokumen/gambar/portfolio/jagung.jpg" data-gall="portfolioGallery" class="venobox preview-link" title="App 2"><i class="bx bx-plus"></i></a>
+                  <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
+                </div>
+              </div>
+
+              <div class="col-lg-4 col-md-6 portfolio-item filter-card">
+                <div class="portfolio-img"><img src="{{base_url}}assets/dokumen/gambar/portfolio/kedelai.jpg" class="img-fluid" alt=""></div>
+                <div class="portfolio-info">
+                  <h4>Card 2</h4>
+                  <p>Card</p>
+                  <a href="{{base_url}}assets/dokumen/gambar/portfolio/kedelai.jpg" data-gall="portfolioGallery" class="venobox preview-link" title="Card 2"><i class="bx bx-plus"></i></a>
+                  <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
+                </div>
+              </div>
+
+              <div class="col-lg-4 col-md-6 portfolio-item filter-web">
+                <div class="portfolio-img"><img src="{{base_url}}assets/dokumen/gambar/portfolio/kopi.jpg" class="img-fluid" alt=""></div>
+                <div class="portfolio-info">
+                  <h4>Web 2</h4>
+                  <p>Web</p>
+                  <a href="{{base_url}}assets/dokumen/gambar/portfolio/kopi.jpg" data-gall="portfolioGallery" class="venobox preview-link" title="Web 2"><i class="bx bx-plus"></i></a>
+                  <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
+                </div>
+              </div>
+
+              <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+                <div class="portfolio-img"><img src="{{base_url}}assets/dokumen/gambar/portfolio/mangga.jpg" class="img-fluid" alt=""></div>
+                <div class="portfolio-info">
+                  <h4>App 3</h4>
+                  <p>App</p>
+                  <a href="{{base_url}}assets/dokumen/gambar/portfolio/mangga.jpg" data-gall="portfolioGallery" class="venobox preview-link" title="App 3"><i class="bx bx-plus"></i></a>
+                  <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
+                </div>
+              </div>
+
+              <div class="col-lg-4 col-md-6 portfolio-item filter-card">
+                <div class="portfolio-img"><img src="{{base_url}}assets/dokumen/gambar/portfolio/padi.jpg" class="img-fluid" alt=""></div>
+                <div class="portfolio-info">
+                  <h4>Card 1</h4>
+                  <p>Card</p>
+                  <a href="{{base_url}}assets/dokumen/gambar/portfolio/padi.jpg" data-gall="portfolioGallery" class="venobox preview-link" title="Card 1"><i class="bx bx-plus"></i></a>
+                  <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
+                </div>
+              </div>
+
+              <div class="col-lg-4 col-md-6 portfolio-item filter-card">
+                <div class="portfolio-img"><img src="{{base_url}}assets/dokumen/gambar/portfolio/pisang.jpg" class="img-fluid" alt=""></div>
+                <div class="portfolio-info">
+                  <h4>Card 3</h4>
+                  <p>Card</p>
+                  <a href="{{base_url}}assets/dokumen/gambar/portfolio/pisang.jpg" data-gall="portfolioGallery" class="venobox preview-link" title="Card 3"><i class="bx bx-plus"></i></a>
+                  <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
+                </div>
+              </div> -->
+
+              <!-- <div class="col-lg-4 col-md-6 portfolio-item filter-web">
+                <div class="portfolio-img"><img src="{{base_url}}assets/dokumen/gambar/portfolio/portfolio-9.jpg" class="img-fluid" alt=""></div>
+                <div class="portfolio-info">
+                  <h4>Web 3</h4>
+                  <p>Web</p>
+                  <a href="{{base_url}}assets/dokumen/gambar/portfolio/portfolio-9.jpg" data-gall="portfolioGallery" class="venobox preview-link" title="Web 3"><i class="bx bx-plus"></i></a>
+                  <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
+                </div>
+              </div> -->
+
+            </div>
+            <div class="col-12" style="margin-top: 1.5em;">
+                <ul class="pagination justify-content-center">
+                    <li class="page-item">
+                        <a class="page-link" href="javascript:prevPage_pangan()" id="btn_prev_pangan"><i class="icofont-arrow-left"></i></a>
+                    </li>
+                    <li class="page-item active"><a class="page-link" href="#"><span id="page_pangan">1</span></a></li>
+                    <li class="page-item">
+                        <a class="page-link" href="javascript:nextPage_pangan()" id="btn_next_pangan" ><i class="icofont-arrow-right"></i></a>
+                    </li>
+                </ul>
+            </div>
+
+          </div>
+          <!-- Modal -->
+        </section><!-- End Portfolio Section -->
+
+        <!-- ======= Team Section ======= ->
+        <section id="team" class="team section-bg">
+          <div class="container">
+
+            <div class="section-title">
+              <h2>Tim E-PANTAS</h2>
+              <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+            </div>
+
+            <div class="row">
+
+              <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
+                <div class="member">
+                  <div class="member-img">
+                    <img src="{{base_url}}assets/valera/img/team/team-1.jpg" class="img-fluid" alt="">
+                    <div class="social">
+                      <a href=""><i class="icofont-twitter"></i></a>
+                      <a href=""><i class="icofont-facebook"></i></a>
+                      <a href=""><i class="icofont-instagram"></i></a>
+                      <a href=""><i class="icofont-linkedin"></i></a>
+                    </div>
+                  </div>
+                  <div class="member-info">
+                    <h4>Walter White</h4>
+                    <span>Chief Executive Officer</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
+                <div class="member">
+                  <div class="member-img">
+                    <img src="{{base_url}}assets/valera/img/team/team-2.jpg" class="img-fluid" alt="">
+                    <div class="social">
+                      <a href=""><i class="icofont-twitter"></i></a>
+                      <a href=""><i class="icofont-facebook"></i></a>
+                      <a href=""><i class="icofont-instagram"></i></a>
+                      <a href=""><i class="icofont-linkedin"></i></a>
+                    </div>
+                  </div>
+                  <div class="member-info">
+                    <h4>Sarah Jhonson</h4>
+                    <span>Product Manager</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
+                <div class="member">
+                  <div class="member-img">
+                    <img src="{{base_url}}assets/valera/img/team/team-3.jpg" class="img-fluid" alt="">
+                    <div class="social">
+                      <a href=""><i class="icofont-twitter"></i></a>
+                      <a href=""><i class="icofont-facebook"></i></a>
+                      <a href=""><i class="icofont-instagram"></i></a>
+                      <a href=""><i class="icofont-linkedin"></i></a>
+                    </div>
+                  </div>
+                  <div class="member-info">
+                    <h4>William Anderson</h4>
+                    <span>CTO</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
+                <div class="member">
+                  <div class="member-img">
+                    <img src="{{base_url}}assets/valera/img/team/team-4.jpg" class="img-fluid" alt="">
+                    <div class="social">
+                      <a href=""><i class="icofont-twitter"></i></a>
+                      <a href=""><i class="icofont-facebook"></i></a>
+                      <a href=""><i class="icofont-instagram"></i></a>
+                      <a href=""><i class="icofont-linkedin"></i></a>
+                    </div>
+                  </div>
+                  <div class="member-info">
+                    <h4>Amanda Jepson</h4>
+                    <span>Accountant</span>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+        </section><!- End Team Section -->
+
+        <!-- ======= Pricing Section ======= >
+        <section id="pricing" class="pricing">
+          <div class="container">
+
+            <div class="section-title">
+              <h2>Pricing</h2>
+              <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+            </div>
+
+            <div class="row">
+
+              <div class="col-lg-3 col-md-6">
+                <div class="box">
+                  <h3>Free</h3>
+                  <h4><sup>$</sup>0<span> / month</span></h4>
+                  <ul>
+                    <li>Aida dere</li>
+                    <li>Nec feugiat nisl</li>
+                    <li>Nulla at volutpat dola</li>
+                    <li class="na">Pharetra massa</li>
+                    <li class="na">Massa ultricies mi</li>
+                  </ul>
+                  <div class="btn-wrap">
+                    <a href="#" class="btn-buy">Buy Now</a>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-lg-3 col-md-6 mt-4 mt-md-0">
+                <div class="box featured">
+                  <h3>Business</h3>
+                  <h4><sup>$</sup>19<span> / month</span></h4>
+                  <ul>
+                    <li>Aida dere</li>
+                    <li>Nec feugiat nisl</li>
+                    <li>Nulla at volutpat dola</li>
+                    <li>Pharetra massa</li>
+                    <li class="na">Massa ultricies mi</li>
+                  </ul>
+                  <div class="btn-wrap">
+                    <a href="#" class="btn-buy">Buy Now</a>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-lg-3 col-md-6 mt-4 mt-lg-0">
+                <div class="box">
+                  <h3>Developer</h3>
+                  <h4><sup>$</sup>29<span> / month</span></h4>
+                  <ul>
+                    <li>Aida dere</li>
+                    <li>Nec feugiat nisl</li>
+                    <li>Nulla at volutpat dola</li>
+                    <li>Pharetra massa</li>
+                    <li>Massa ultricies mi</li>
+                  </ul>
+                  <div class="btn-wrap">
+                    <a href="#" class="btn-buy">Buy Now</a>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-lg-3 col-md-6 mt-4 mt-lg-0">
+                <div class="box">
+                  <span class="advanced">Advanced</span>
+                  <h3>Ultimate</h3>
+                  <h4><sup>$</sup>49<span> / month</span></h4>
+                  <ul>
+                    <li>Aida dere</li>
+                    <li>Nec feugiat nisl</li>
+                    <li>Nulla at volutpat dola</li>
+                    <li>Pharetra massa</li>
+                    <li>Massa ultricies mi</li>
+                  </ul>
+                  <div class="btn-wrap">
+                    <a href="#" class="btn-buy">Buy Now</a>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+        </section><!-- End Pricing Section -->
+
+        <!-- ======= Frequently Asked Questions Section ======= -->
+        <section id="faq" class="faq section-bg" hidden>
+          <div class="container">
+
+            <div class="section-title">
+              <h2>Frequently Asked Questions</h2>
+              <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+            </div>
+
+            <div class="faq-list">
+              <ul>
+                <li data-aos="fade-up">
+                  <i class="bx bx-help-circle icon-help"></i> <a data-toggle="collapse" class="collapse" href="#faq-list-1">Non consectetur a erat nam at lectus urna duis? <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+                  <div id="faq-list-1" class="collapse show" data-parent=".faq-list">
+                    <p>
+                      Feugiat pretium nibh ipsum consequat. Tempus iaculis urna id volutpat lacus laoreet non curabitur gravida. Venenatis lectus magna fringilla urna porttitor rhoncus dolor purus non.
+                    </p>
+                  </div>
+                </li>
+
+                <li data-aos="fade-up" data-aos-delay="100">
+                  <i class="bx bx-help-circle icon-help"></i> <a data-toggle="collapse" href="#faq-list-2" class="collapsed">Feugiat scelerisque varius morbi enim nunc? <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+                  <div id="faq-list-2" class="collapse" data-parent=".faq-list">
+                    <p>
+                      Dolor sit amet consectetur adipiscing elit pellentesque habitant morbi. Id interdum velit laoreet id donec ultrices. Fringilla phasellus faucibus scelerisque eleifend donec pretium. Est pellentesque elit ullamcorper dignissim. Mauris ultrices eros in cursus turpis massa tincidunt dui.
+                    </p>
+                  </div>
+                </li>
+
+                <li data-aos="fade-up" data-aos-delay="200">
+                  <i class="bx bx-help-circle icon-help"></i> <a data-toggle="collapse" href="#faq-list-3" class="collapsed">Dolor sit amet consectetur adipiscing elit? <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+                  <div id="faq-list-3" class="collapse" data-parent=".faq-list">
+                    <p>
+                      Eleifend mi in nulla posuere sollicitudin aliquam ultrices sagittis orci. Faucibus pulvinar elementum integer enim. Sem nulla pharetra diam sit amet nisl suscipit. Rutrum tellus pellentesque eu tincidunt. Lectus urna duis convallis convallis tellus. Urna molestie at elementum eu facilisis sed odio morbi quis
+                    </p>
+                  </div>
+                </li>
+
+                <li data-aos="fade-up" data-aos-delay="300">
+                  <i class="bx bx-help-circle icon-help"></i> <a data-toggle="collapse" href="#faq-list-4" class="collapsed">Tempus quam pellentesque nec nam aliquam sem et tortor consequat? <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+                  <div id="faq-list-4" class="collapse" data-parent=".faq-list">
+                    <p>
+                      Molestie a iaculis at erat pellentesque adipiscing commodo. Dignissim suspendisse in est ante in. Nunc vel risus commodo viverra maecenas accumsan. Sit amet nisl suscipit adipiscing bibendum est. Purus gravida quis blandit turpis cursus in.
+                    </p>
+                  </div>
+                </li>
+
+                <li data-aos="fade-up" data-aos-delay="400">
+                  <i class="bx bx-help-circle icon-help"></i> <a data-toggle="collapse" href="#faq-list-5" class="collapsed">Tortor vitae purus faucibus ornare. Varius vel pharetra vel turpis nunc eget lorem dolor? <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+                  <div id="faq-list-5" class="collapse" data-parent=".faq-list">
+                    <p>
+                      Laoreet sit amet cursus sit amet dictum sit amet justo. Mauris vitae ultricies leo integer malesuada nunc vel. Tincidunt eget nullam non nisi est sit amet. Turpis nunc eget lorem dolor sed. Ut venenatis tellus in metus vulputate eu scelerisque.
+                    </p>
+                  </div>
+                </li>
+
+              </ul>
+            </div>
+
+          </div>
+        </section><!-- End Frequently Asked Questions Section -->
+
+        <!-- ======= Contact Section ======= -->
+        <section id="contact" class="contact">
+          <div class="container">
+
+            <div class="section-title">
+              <h2>Kontak Kami</h2>
+              <p>Layanan Opererasional dan Informasi Kantor Distan Provinsi Jawa Barat.</p>
+            </div>
+
+            <div>
+              <iframe style="border:0; width: 100%; height: 270px;" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15843.720996100557!2d107.6228294!3d-6.8989458!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x6676fb57f28eac83!2sDinas%20Tanaman%20Pangan%20dan%20Hortikultura%20Provinsi%20Jawa%20Barat!5e0!3m2!1sid!2sid!4v1606287763102!5m2!1sid!2sid" frameborder="0" allowfullscreen></iframe>
+            </div>
+
+            <div class="row mt-5">
+
+              <div class="col-lg-8">
+                <div class="info">
+                  <div class="address">
+                    <i class="icofont-google-map"></i>
+                    <h4>Alamat:</h4>
+                    <p>Jl. Surapati No.71, Sadang Serang, Kecamatan Coblong, Kota Bandung, Jawa Barat 40133</p>
+                  </div>
+
+                  <div class="email">
+                    <i class="icofont-envelope"></i>
+                    <h4>Email:</h4>
+                    <p>info@example.com</p>
+                  </div>
+
+                  <div class="phone">
+                    <i class="icofont-phone"></i>
+                    <h4>Telepon:</h4>
+                    <p>(022) 2503884</p>
+                  </div>
+
+                </div>
+
+              </div>
+              <div class="col-lg-4 mt-5 mt-lg-0">
+                    <br/>
+                    <h2><b>Jam Operasional:</b></h2>
+                    <br/>
+                <div class="row">
+                  <div class="col-md-6">
+                      <ul style="text-align: left;">
+                        <li><i class="ri-checkbox-circle-fill"></i> Senin</li>
+                        <li><i class="ri-checkbox-circle-fill"></i> Selasa</li>
+                        <li><i class="ri-checkbox-circle-fill"></i> Rabu</li>
+                        <li><i class="ri-checkbox-circle-fill"></i> Kamis</li>
+                        <li><i class="ri-checkbox-circle-fill"></i> Jumat</li>
+                        <li><i class="ri-information-fill"></i> Sabtu</li>
+                        <li><i class="ri-information-fill"></i> Minggu</li>
+                      </ul>
+                    </div>
+                    <div class="col-md-6">
+                      <ul style="text-align: left;">
+                        <li><i class="ri-arrow-right-s-line"></i> 07.45–16.00</li>
+                        <li><i class="ri-arrow-right-s-line"></i> 07.45–16.00</li>
+                        <li><i class="ri-arrow-right-s-line"></i> 07.45–16.00</li>
+                        <li><i class="ri-arrow-right-s-line"></i> 07.45–16.00</li>
+                        <li><i class="ri-arrow-right-s-line"></i> 07.45–16.00</li>
+                        <li><i class="ri-arrow-right-s-line"></i> Tutup</li>
+                        <li><i class="ri-arrow-right-s-line"></i> Tutup</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-lg-8 mt-5 mt-lg-0" hidden>
+
+                <form action="forms/contact.php" method="post" role="form" class="php-email-form">
+                  <div class="form-row">
+                    <div class="col-md-6 form-group">
+                      <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
+                      <div class="validate"></div>
+                    </div>
+                    <div class="col-md-6 form-group">
+                      <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" data-rule="email" data-msg="Please enter a valid email" />
+                      <div class="validate"></div>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject" />
+                    <div class="validate"></div>
+                  </div>
+                  <div class="form-group">
+                    <textarea class="form-control" name="message" rows="5" data-rule="required" data-msg="Please write something for us" placeholder="Message"></textarea>
+                    <div class="validate"></div>
+                  </div>
+                  <div class="mb-3">
+                    <div class="loading">Loading</div>
+                    <div class="error-message"></div>
+                    <div class="sent-message">Your message has been sent. Thank you!</div>
+                  </div>
+                  <div class="text-center"><button type="submit">Send Message</button></div>
+                </form>
+
+              </div>
+
+            </div>
+
+        </section><!-- End Contact Section -->
+        <!-- Modal -->
+
+        <div id="myModal" class="modal fade" role="dialog">
+          <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+              <div class="modal-header">
+                <h4 class="modal-title">Ciherang</h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+              </div>
+              <div class="modal-body">
+                <p>Stok Pangan : 120 Ton</p>
+                <p>Tanggal Panen : 24 Desember 2020</p>
+                <p>Nama Petani : Alabama</p>
+                <p>Nama Penyuluh : Breno</p>
+                <p>Kabupaten Kota : Sumedang</p>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="modal fade" id="issueModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+          <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body" >
+                <div class="row">
+                  <div class="col-lg-12" id="issueBody">
+
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+    {% endblock %}
+    {% block js %}
+    <script type="text/javascript" src="{{base_url}}assets/js/action/user/index.js"></script>
+    <script>
+
+    $(document).on('click','.listIssue',function(){
+      var id = $(this).attr('id');
+      $('#issueModal').modal({backdrop: 'static', keyboard: false},'show');
+      $.ajax({
+        method:'POST',
+        dataType:'JSON',
+        data:{id:id},
+        url:'detailIssue',
+        success:function(data){
+          var html = '';
+          html +='<div class="row">';
+          html +='<div class="col-md-12">';
+          html +='<p class="h3 mb-3">'+data.judul+'</p>';
+          html +='<p class="h6 text-muted text-right mt-2"><i class="bx bx-calendar"></i> <em>'+data.date+'</em></p>';
+          html +='<img src="{{base_url}}'+data.file+'" class="img-fluid mb-4 d-block mx-auto" width="800px" alt="issue.png">';
+          html +='<div class="text-justify mb-3">';
+          html += data.deskripsi;
+          html +='</div>';
+          html +='</div>';
+          html +='</div>';
+          $('#issueBody').html(html);
+        }
+      })
+    })
+    </script>
+    {% endblock %}

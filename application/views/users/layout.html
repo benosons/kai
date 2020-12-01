@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>E-PANTAS - v1.0</title>
+  <meta content="" name="descriptison">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link rel="shortcut icon" href="{{base_url}}assets/img/logo/favico.ico">
+  <link href="{{base_url}}assets/valera/assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="{{base_url}}assets/valera/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="{{base_url}}assets/valera/vendor/icofont/icofont.min.css" rel="stylesheet">
+  <link href="{{base_url}}assets/valera/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="{{base_url}}assets/valera/vendor/remixicon/remixicon.css" rel="stylesheet">
+  <link href="{{base_url}}assets/valera/vendor/line-awesome/css/line-awesome.min.css" rel="stylesheet">
+  <link href="{{base_url}}assets/valera/vendor/owl.carousel/assets/owl.carousel.min.css" rel="stylesheet">
+  <link href="{{base_url}}assets/valera/vendor/venobox/venobox.css" rel="stylesheet">
+  <!-- css 3 -->
+  <link rel="stylesheet" type="text/css" href="{{base_url}}assets/css3/css/demo.css" />
+  <link rel="stylesheet" type="text/css" href="{{base_url}}assets/css3/css/style1.css" />
+
+  <!-- Template Main CSS File -->
+  <link href="{{base_url}}assets/valera/css/style.css" rel="stylesheet">
+
+  <!-- =======================================================
+  * Template Name: Valera - v2.1.0
+  * Template URL: https://bootstrapmade.com/valera-free-bootstrap-theme/
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+  <style>
+
+    /* .kotak {
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+
+    .kotak img {
+  -webkit-transition: 0.4s ease;
+  transition: 0.4s ease;
+  width: 700px;
+}
+
+#footer:hover .kotak img {
+  -webkit-transform: scale(1.08);
+  transform: scale(1.08);
+} */
+
+  .show {
+    display: block;
+  }
+
+  .hide {
+    display: none;
+  }
+
+  .filterDiv {
+  float: left;
+}
+  </style>
+</head>
+
+  <body>
+
+    {% include "users/top_bar.html" %}
+    <main id="main">
+    {% block content %} {% endblock %}
+    </main><!-- End #main -->
+
+    {% include "users/footer.html" %}
+
+    <!-- Vendor JS Files -->
+    <script src="{{base_url}}assets/valera/vendor/jquery/jquery.min.js"></script>
+    <script src="{{base_url}}assets/valera/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="{{base_url}}assets/valera/vendor/jquery.easing/jquery.easing.min.js"></script>
+    <script src="{{base_url}}assets/valera/vendor/php-email-form/validate.js"></script>
+    <script src="{{base_url}}assets/valera/vendor/waypoints/jquery.waypoints.min.js"></script>
+    <script src="{{base_url}}assets/valera/vendor/counterup/counterup.min.js"></script>
+    <script src="{{base_url}}assets/valera/vendor/jquery-sticky/jquery.sticky.js"></script>
+    <script src="{{base_url}}assets/valera/vendor/owl.carousel/owl.carousel.min.js"></script>
+    <script src="{{base_url}}assets/valera/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+    <script src="{{base_url}}assets/valera/vendor/venobox/venobox.min.js"></script>
+
+    <script type="text/javascript" src="{{base_url}}assets/css3/js/modernizr.custom.86080.js"></script>
+
+    <!-- Template Main JS File -->
+    <script src="{{base_url}}assets/valera/js/main.js"></script>
+    {% block js %} {% endblock %}
+</body>
+</html>
