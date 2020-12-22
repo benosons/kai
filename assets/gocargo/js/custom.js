@@ -1,6 +1,6 @@
-// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 // by ExoTheme 2015
-// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 jQuery(document).ready(function () {
     'use strict'; // use strict mode
 
@@ -8,9 +8,9 @@ jQuery(document).ready(function () {
     jQuery('#preloader').delay(500).fadeOut(500);
 
 
-    // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+    // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
     // touch and swipe owl carousel
-    // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+    // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
     jQuery("#testi-carousel").owlCarousel({
         singleItem: true,
         lazyLoad: true,
@@ -28,14 +28,14 @@ jQuery(document).ready(function () {
         navigation: false,
         pagination: false,
     });
-	
-	
+
+
     jQuery(".gallery-carousel").owlCarousel({
         items: 3,
         navigation: false,
         pagination: true,
     });
-	
+
     jQuery(".carousel-text").owlCarousel({
         singleItem: true,
         lazyLoad: true,
@@ -55,7 +55,7 @@ jQuery(document).ready(function () {
         navigation: false,
         pagination: false
     });
-	
+
 	jQuery(".carousel-1").owlCarousel({
         singleItem: true,
         lazyLoad: false,
@@ -63,7 +63,7 @@ jQuery(document).ready(function () {
         pagination: false,
 		autoPlay: true,
     });
-	
+
 	jQuery(".single-carousel-1").owlCarousel({
         singleItem: true,
         lazyLoad: false,
@@ -72,24 +72,24 @@ jQuery(document).ready(function () {
 		mouseDrag: false,
         transitionStyle: "fade"
     });
-	
+
 	jQuery(".client-quotes").owlCarousel({
         singleItem: true,
         lazyLoad: false,
         navigation: false,
         pagination: true
     });
-	
+
 
     // wow jquery
     new WOW().init();
-    // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+    // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
     // fit video
-    // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+    // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
     jQuery(".container").fitVids();
-    // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+    // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
     // filtering gallery
-    // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+    // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
     var $container = jQuery('#gallery-isotope');
     $container.imagesLoaded( function() {
         $container.isotope({
@@ -131,10 +131,10 @@ jQuery(document).ready(function () {
         });
         group.height(tallest);
     }
-    
+
      equalHeight($(".item-blog"));
-   
-    
+
+
 	function setHeight(column) {
 		var maxHeight = 0;
 		//Get all the element with class = col
@@ -149,10 +149,10 @@ jQuery(document).ready(function () {
 		//Set the height
 		column.height(maxHeight);
 	}
-	
+
 	setHeight('.col-1, .col-2');
 	setHeight('.footer-col');
-   
+
     jQuery('.small-pic').each(function () {
         w = jQuery(this).parent().css("width");
         wd = (parseInt(w, 10) - 40) / 4;
@@ -192,23 +192,23 @@ jQuery(document).ready(function () {
                 if (this.complete) $(this).load();
             });
         });
-		
+
 		jQuery('.center-xy').each(function () {
 
             jQuery(this).parent().find("img").on('load', function () {
                 var w = parseInt(jQuery(this).parent().find(".center-xy").css("width"),10);
 				var h = parseInt(jQuery(this).parent().find(".center-xy").css("height"),10);
-				
+
 				var pic_w = jQuery(this).css("width");
                 var pic_h = jQuery(this).css("height");
-				
+
 				jQuery(this).parent().find(".center-xy").css("left",parseInt(pic_w,10)/2-w/2);
 				jQuery(this).parent().find(".center-xy").css("top",parseInt(pic_h,10)/2-h/2);
-				
+
 				jQuery(this).parent().find(".bg-overlay").css("width", pic_w);
                 jQuery(this).parent().find(".bg-overlay").css("height", pic_h);
-				
-				
+
+
             }).each(function () {
                 if (this.complete) $(this).load();
             });
@@ -253,7 +253,7 @@ jQuery(document).ready(function () {
 
 
     }
-	
+
 	function custom_bg() {
 		$("div,section").css('background-color', function() {
 			return jQuery(this).data('bgcolor');
@@ -265,14 +265,14 @@ jQuery(document).ready(function () {
 			return 'cover';
 		});
 		}
-		
-	
+
+
     init();
 	custom_bg();
 
-    // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+    // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
     // paralax background
-    // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 	
+    // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
     var $window = jQuery(window);
     jQuery('section[data-type="background"]').each(function () {
         var $bgobj = jQuery(this); // assigning the object
@@ -287,7 +287,7 @@ jQuery(document).ready(function () {
     });
     document.createElement("article");
     document.createElement("section");
-	
+
     // --------------------------------------------------
     // portfolio hover
     // --------------------------------------------------
@@ -319,14 +319,14 @@ jQuery(document).ready(function () {
             true).fadeTo(speed, 1);
     });
 
-    // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+    // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
     // scroll to top
-    // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 	
+    // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
     jQuery().UItoTop({
         easingType: 'easeInOutExpo'
     });
-	
-    // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+    // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
     // gallery hover
     // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
@@ -339,17 +339,17 @@ jQuery(document).ready(function () {
             opacity: 1
         });
     }, 100);
-	
-    // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+    // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
     // resize
-    // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 	
+    // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
     window.onresize = function (event) {
         init();
         equalHeight(jQuery(".item-blog"));
     };
-    // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+    // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
     // show / hide slider navigation
-    // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 	
+    // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
     jQuery('.callbacks_nav').hide();
     jQuery('#slider').on("mouseenter", function () {
         jQuery('.callbacks_nav').stop().animate({
@@ -360,9 +360,9 @@ jQuery(document).ready(function () {
             opacity: 0
         });
     }, 100);
-    // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+    // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
     // image hover effect
-    // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 	
+    // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
     jQuery(".pic-hover .hover").hide();
     jQuery(".pic-hover").on("mouseenter", function () {
         jQuery(this).find(".hover").width(jQuery(this).find(
@@ -385,31 +385,31 @@ jQuery(document).ready(function () {
 	// --------------------------------------------------
 	jQuery('.exo_tab').find('.exo_tab_content > div').hide();
 	jQuery('.exo_tab').find('.exo_tab_content > div:first').show();
-	
+
 	jQuery('.exo_nav .nav-item').click(function() {
 		jQuery(this).parent().find('.nav-item span').removeClass("active");
 		jQuery(this).find('span').addClass("active");
 		jQuery(this).parent().parent().find('.exo_tab_content > div').hide();
-	
+
 		var indexer = jQuery(this).index(); //gets the current index of (this) which is #nav li
-		jQuery(this).parent().parent().find('.exo_tab_content > div:eq(' + indexer + ')').fadeIn(); //uses whatever index the link has to open the corresponding box 
+		jQuery(this).parent().parent().find('.exo_tab_content > div:eq(' + indexer + ')').fadeIn(); //uses whatever index the link has to open the corresponding box
 	});
-	
-	
+
+
 	// --------------------------------------------------
 	// tabs
 	// --------------------------------------------------
 	jQuery('.exo_tab.tab_map').find('.exo_tab_content > div').css('height','0');
 	jQuery('.exo_tab.tab_map').find('.exo_tab_content > div').show();
 	jQuery('.exo_tab').find('.exo_tab_content > div:first').css('height','auto');
-	
+
 	jQuery('.tab_map .exo_nav .nav-item').click(function() {
 		jQuery(this).parent().find('.nav-item span').removeClass("active");
 		jQuery(this).find('span').addClass("active");
 		jQuery(this).parent().parent().find('.exo_tab_content > div').css('height','0');
-	
+
 		var indexer = jQuery(this).index(); //gets the current index of (this) which is #nav li
-		jQuery(this).parent().parent().find('.exo_tab_content > div:eq(' + indexer + ')').css('height','auto'); //uses whatever index the link has to open the corresponding box 
+		jQuery(this).parent().parent().find('.exo_tab_content > div:eq(' + indexer + ')').css('height','auto'); //uses whatever index the link has to open the corresponding box
 	});
 
 
@@ -426,11 +426,11 @@ jQuery(document).ready(function () {
         jQuery(this).parent().addClass("active");
 
     });
-	
+
 	// btn track click
 	jQuery('#track-it').on( "click", function() {
 		jQuery('#section-tracking-result').slideDown();
-		jQuery('html,body').scrollTo("#section-tracking-result", "#section-tracking-result"); 
+		jQuery('html,body').scrollTo("#section-tracking-result", "#section-tracking-result");
     });
 
         //  Accordion Panels
@@ -499,13 +499,13 @@ jQuery(document).ready(function () {
         preloader: false,
         fixedContentPos: false
     });
-	
+
 	 $('.gallery-item').magnificPopup({
         delegate: 'a', // child items selector, by clicking on it popup will open
         type: 'image'
         // other options
     });
-	
+
 	$('.image-popup-vertical-fit').magnificPopup({
 		type: 'image',
 		closeOnContentClick: true,
@@ -513,7 +513,7 @@ jQuery(document).ready(function () {
 		image: {
 			verticalFit: true
 		}
-		
+
 	});
 
 	$('.image-popup-fit-width').magnificPopup({
@@ -578,7 +578,7 @@ jQuery(document).ready(function () {
         if (iteration > 2) iteration = 1;
         $(this).data('iteration', iteration);
     });
-	
+
 	// expand box
     jQuery(".btn-open-map").on( "click", function() {
         var iteration = $(this).data('iteration') || 1;
@@ -627,31 +627,31 @@ jQuery(document).ready(function () {
     jQuery(window).on("scroll", function () {
         var fromTop = jQuery(window).scrollTop();
         jQuery("body").toggleClass("down", (fromTop > 240));
-		
-		
-		
+
+
+
     });
-	
-	
+
+
 	/**
          * This part handles the highlighting functionality.
-         * We use the scroll functionality again, some array creation and 
+         * We use the scroll functionality again, some array creation and
          * manipulation, class adding and class removing, and conditional testing
          */
         var aChildren = jQuery("#mainmenu li").children(); // find the a children of the list items
         var aArray = []; // create the empty aArray
-        for (var i=0; i < aChildren.length; i++) {    
+        for (var i=0; i < aChildren.length; i++) {
             var aChild = aChildren[i];
             var ahref = jQuery(aChild).attr('href');
             aArray.push(ahref);
         } // this for loop fills the aArray with attribute href values
-        
+
         jQuery(window).scroll(function(){
 			if($('body').hasClass('onepage')){
             var windowPos = jQuery(window).scrollTop(); // get the offset of the window from the top of page
             var windowHeight = jQuery(window).height(); // get the height of the window
             var docHeight = jQuery(document).height();
-            
+
             for (var i=0; i < aArray.length; i++) {
                 var theID = aArray[i];
                 var divPos = jQuery(theID).offset().top - 100; // get the offset of the div from the top of page *edited
@@ -662,7 +662,7 @@ jQuery(document).ready(function () {
                     jQuery("a[href='" + theID + "']").removeClass("active");
                 }
             }
-            
+
             if(windowPos + windowHeight == docHeight) {
                 if (!jQuery("#mainmenu li:last-child a").hasClass("active")) {
                     var navActiveCurrent = jQuery(".active").attr("href");
@@ -671,7 +671,7 @@ jQuery(document).ready(function () {
                 }
             }
 			}
-        });	
+        });
 
 
     // mobile navigation
@@ -695,50 +695,52 @@ jQuery(document).ready(function () {
         if (iteration > 2) iteration = 1;
         $(this).data('iteration', iteration);
     });
-	
+
 	// looping background
-	
+
 	$(function(){
-    var x = 0;
-    setInterval(function(){
-        x-=1;
-        $('#section-welcome').css('background-position', x + 'px 0');
-		$('#subheader.bgloop').css('background-position', x/2 + 'px 0');
-    }, 10);
+    // var x = 0;
+    // setInterval(function(){
+    //     x-=1;
+    //     $('#section-welcome').css('background-position', x + 'px 0');
+		// $('#subheader.bgloop').css('background-position', x/2 + 'px 0');
+    // }, 10);
 	});
-	
+
 	// sticky footer
-	
-	var footerHeight = jQuery("footer").css("height");	
+
+	var footerHeight = jQuery("footer").css("height");
 	if(jQuery("footer").hasClass("sticky")){
 		jQuery("body").css("margin-bottom",footerHeight);
 	}
-	
+
 	// one page navigation
-	
+
 	        /**
          * This part causes smooth scrolling using scrollto.js
          * We target all a tags inside the nav, and apply the scrollto.js to it.
          */
-		 
-        jQuery("#mainmenu a").click(function(evn){			
-			if (this.href.indexOf('#') != -1) {
-            evn.preventDefault();
-            jQuery('html,body').scrollTo(this.hash, this.hash); 
-			}
-        });	
-	
-	
+
+        jQuery("#mainmenu a").click(function(evn){
+    			if (this.href.indexOf('#') != -1) {
+                evn.preventDefault();
+                $('html, body').animate({
+                    scrollTop: $(this.hash).offset().top
+                }, 2000);
+    			}
+        });
+
+
 	jQuery(window).load(function() {
-		
+
 	// custom
 
     jQuery('.owl-custom-nav').each(function () {
         var owl = $('.owl-custom-nav').next();
-		var h = $(this).height();		
+		var h = $(this).height();
         var ow = owl.height();
         $(this).css("margin-top", (ow / 2) - h);
-		
+
 
         owl.owlCarousel();
 
@@ -750,13 +752,13 @@ jQuery(document).ready(function () {
             owl.trigger('owl.prev');
         });
     });
-	
+
 	// stellar plugin
     $.stellar({
     horizontalScrolling: false,
     hideDistantElements: false
     });
-        
+
     });
-	
+
 });
