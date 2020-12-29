@@ -76,6 +76,35 @@ class Data extends CI_Controller {
 		}
 	}
 
+	public function kegiatan()
+	{
+		if ( $this->logged && $this->role == '10' || $this->role == '20')
+		{
+			$this->content['js'] = '/assets/js/action/data/listkegiatan.js';
+			$this->twig->display('admin/data/kegiatan.html', $this->content);
+		}else{
+			redirect("dashboard");
+		}
+	}
+
+	public function tambahkegiatan()
+	{
+		if ( $this->logged && $this->role == '10' || $this->role == '20')
+		{
+			$this->content['js'] = '/assets/js/action/data/tambahkegiatan.js';
+			$this->twig->display('admin/data/tambahkegiatan.html', $this->content);
+		}else{
+			redirect("dashboard");
+		}
+	}
+
+	public function detailkegiatan()
+	{
+
+			$this->content['js'] = '/assets/js/action/user/detailkegiatan.js';
+			$this->twig->display('users/kegiatan/detailkegiatan.html', $this->content);
+	}
+
 	public function formPangan()
 	{
 		if ( $this->logged && $this->role == '10' || $this->role == '20')

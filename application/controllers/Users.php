@@ -46,6 +46,7 @@ class Users extends CI_Controller {
 
 	public function index()
 	{
+		$this->content['js'] = '/assets/js/action/user/index.js';
 		if ($this->logged)
 		{
 

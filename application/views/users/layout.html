@@ -43,7 +43,9 @@
     <!-- theme custom and plugin settings -->
     <script src="{{base_url}}assets/gocargo/js/custom.js"></script>
     <script src="{{base_url}}assets/gocargo/js/custom-tweecool.js"></script>
-
+    {% if js %}
+      <script src = "{{base_url}}{{js}}"></script>
+    {% endif %}
     {% block js %} {% endblock %}
 </body>
 </html>

@@ -1,6 +1,6 @@
 $( document ).ready(function() {
   console.log('You are running jQuery version: ' + $.fn.jquery);
-
+  loadkegiatan();
 });
 
 
@@ -19,33 +19,41 @@ var records_per_page_pangan = 4;
 var data_isu = {};
 var data_pangan = {};
 
-loadIssueu();
-function loadIssueu(){
+function loadkegiatan(){
   $.ajax({
     method:'GET',
     dataType:'JSON',
-    url:'loadIssue',
+    url:'loadkegiatan',
     success:function(result){
-      data_isu = result;
+      data_kegiatan = result;
+      console.log(data_kegiatan);
+      // changePage_isu(1);
+      let content = '';
+      for (var i = 0; i < data_kegiatan.length; i++) {
+        content += `<div class="col-md-4 news-item style-2">
+                      <figure class="pic-hover">
+                          <span class="center-xy"></span>
+                          <img src="`+data_kegiatan[i].dokumen+`" class="img-responsive" alt="">
+                      </figure>
 
-      changePage_isu(1);
-      // var i = 0;
-      // var html = "";
-      // for(i; i<result.length; i++)
-      // {
-      //   html += "<div class='col-md-6 d-flex align-items-stretch'>";
-      //   html += "<div class='card' style='width: 42rem; padding-top:0px !important; text-align:left;'>";
-      //   html += "<img src='{{base_url}}"+result[i].file+"' alt='issue.png' class='card-img-top'>";
-      //   html += "<div class='card-body'>";
-      //   html += "<h5 class='card-title'>"+result[i].judul+"</h5>";
-      //   html += "<p class='card-text-mb-2'>"+result[i].deskripsi.substr(0,150)+"...</p>";
-      //   // const newUrl = result[i].judul.replace(/\s/g, "-")
-      //   html += "<div class='read-more text-right'><button id='"+result[i].id+"' class='btn btn-link btn-sm text-secondary listIssue'><i class='icofont-arrow-right'></i> Read More</button></div>";
-      //   html += "</div>";
-      //   html += "</div>";
-      //   html += "</div>";
-      // }
-      // $('#list-issue').html(html);
+                      <div class="inner">
+                          <div class="date">
+                              <span class="day">18</span>
+                              <span class="month">Aug</span>
+                          </div>
+
+                          <div class="desc">
+                              <a href="detailkegiatan">
+                                  <h4>Gocargo Says Happy New Years</h4>
+                              </a>
+                              Etiam pharetra, erat sed fermentum feugiat, velit mauris egest...
+                              <br>
+                          </div>
+                      </div>
+                  </div>`;
+      }
+
+      $('#view-kegiatan').html(content);
     }
   })
 };
@@ -200,7 +208,6 @@ function loadIssueu(){
     }
 
 
-loadpangan();
 function loadpangan(){
     $.ajax({
         type: 'post',
