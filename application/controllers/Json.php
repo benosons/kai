@@ -83,6 +83,23 @@ class Json extends CI_Controller {
 			echo json_encode($data);
 	}
 
+	public function actionkegiatan()
+	{
+		$params = (object)$this->input->post();
+
+		if($params->param == 'hapus'){
+			$data = $this->Model_json->deletekegiatan($params);
+			// if($data){
+			// 	$path			= FCPATH;
+			// 	unlink($path.'/'.$params->dokumen);
+			// }
+		}
+
+		header('Content-Type: application/json');
+		echo json_encode(array("status" => TRUE));
+
+	}
+
 	public function loaduser(){
 
 			$params = $columns = $totalRecords = $data = array();

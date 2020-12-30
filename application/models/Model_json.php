@@ -159,11 +159,11 @@ class Model_json extends CI_Model {
 
     }
 
-    public function delete($id)
+    public function deletekegiatan($param)
     {
-        // $idx = $this->db->escape_str($id);
-        $this->db->where('id', $id->id);
-        $this->db->delete('muser');
+        $this->db->where('id', $param->id);
+        $valid = $this->db->delete('kegiatan');
+        return $valid;
     }
 
     public function listDataUsers($param)

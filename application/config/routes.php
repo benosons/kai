@@ -58,4 +58,4 @@ $route['translate_uri_dashes'] = FALSE;
 $route['^(logout|loginAdmin|Admin|register|cekusername)(/:any)?$'] = "auth/$0";
 $route['^(listdata|tambahdata|reportdata|kegiatan|tambahkegiatan|detailkegiatan)(/:any)?$'] = "data/$0";
 $route['^(dashboard)(/:any)?$'] = "sys/$0";
-$route['^(submitkegiatan|loadkegiatan)(/:any)?$'] = "json/$0";
+$route['^(submitkegiatan|loadkegiatan|actionkegiatan)(/:any)?$'] = "json/$0";
