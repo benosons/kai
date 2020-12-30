@@ -12,11 +12,10 @@ function loadkegiatan(param){
                 param      : param,
          },
         success: function(result){
+          console.log(result);
           $('#list-kegiatan').DataTable({
                     aaData: result,
                     lengthChange: false,
-                    searching: true,
-                    paging: true,
                     pageLength: 10,
                     aoColumns: [
                         { 'mDataProp': 'id'},
@@ -94,7 +93,7 @@ function action(param, id, dokumen){
             param.charAt(0).toUpperCase() + param.slice(1)+" Kegiatan!",
             "success"
           ).then((value) => {
-            loadkegiatan('');
+            window.location.href = '/kegiatan';
           });
         }
       })
