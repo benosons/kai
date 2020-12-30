@@ -20,9 +20,9 @@ function loadkegiatan(param){
                     aoColumns: [
                         { 'mDataProp': 'id'},
                         { 'mDataProp': 'dokumen', 'sClass':'text-center'},
-                        { 'mDataProp': 'indikator_ssd'},
-                        { 'mDataProp': 'indikator_manager'},
-                        { 'mDataProp': 'uraian_indikator'},
+                        { 'mDataProp': 'indikator_ssd_name'},
+                        { 'mDataProp': 'indikator_manager_name'},
+                        { 'mDataProp': 'indikator_uraian_name'},
                         { 'mDataProp': 'kegiatan'},
                         { 'mDataProp': 'tanggal'},
 

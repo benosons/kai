@@ -105,7 +105,7 @@ class Model_json extends CI_Model {
         $nama = $this->session->userdata('id');
         $kategori = $this->session->userdata('kategori');
         $id = $this->db->escape_str($nama);
-        $query = $this->db->query("select * from kegiatan order by id desc")->result();
+        $query = $this->db->query("select *, (select param_name from param_indikator where param_type = 'ssd' and param_id = kegiatan.indikator_ssd) as indikator_ssd_name, (select param_name from param_indikator where param_type = 'manager' and param_id = kegiatan.indikator_manager) as indikator_manager_name, (select param_name from param_indikator where param_type = 'uraian' and param_id = kegiatan.uraian_indikator) as indikator_uraian_name from kegiatan order by id desc")->result();
 
         return $query;
     }

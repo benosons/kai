@@ -28,6 +28,9 @@ function loadkegiatan(){
       data_kegiatan = result;
       console.log(data_kegiatan);
       // changePage_isu(1);
+      const monthNames = ["Jan", "Feb", "Mar", "Apr", "Mei", "Jun",
+        "Jul", "Agu", "Sep", "Okt", "Nov", "Des"
+      ];
       let content = '';
       for (var i = 0; i < data_kegiatan.length; i++) {
         content += `<div class="col-md-4 news-item style-2">
@@ -38,8 +41,8 @@ function loadkegiatan(){
 
                       <div class="inner">
                           <div class="date">
-                              <span class="day">18</span>
-                              <span class="month">Aug</span>
+                              <span class="day">`+new Date(data_kegiatan[i].tanggal).getDate()+`</span>
+                              <span class="month">`+monthNames[new Date(data_kegiatan[i].tanggal).getMonth()]+`</span>
                           </div>
 
                           <div class="desc">
