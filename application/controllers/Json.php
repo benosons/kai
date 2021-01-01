@@ -83,6 +83,28 @@ class Json extends CI_Controller {
 			echo json_encode($data);
 	}
 
+	public function loadindikator(){
+
+			$params = $this->input->post();
+			$postData = $this->input->post('param');
+
+			$query = $this->Model_json->loadindikator($params);
+			$data = $query;
+
+			header('Content-Type: application/json');
+			echo json_encode($data);
+	}
+
+	public function saveindikator(){
+
+			$params = (object)$this->input->post();
+			$query = $this->Model_json->saveindikator($params, $this->id);
+			$data = $query;
+
+			header('Content-Type: application/json');
+			echo json_encode($data);
+	}
+
 	public function actionkegiatan()
 	{
 		$params = (object)$this->input->post();

@@ -57,5 +57,6 @@ $route['translate_uri_dashes'] = FALSE;
 
 $route['^(logout|loginAdmin|Admin|register|cekusername)(/:any)?$'] = "auth/$0";
 $route['^(listdata|tambahdata|reportdata|kegiatan|tambahkegiatan|detailkegiatan)(/:any)?$'] = "data/$0";
+$route['^(ssd|ssdi|ssdr|ssdt)(/:any)?$'] = "indikator/$0";
 $route['^(dashboard)(/:any)?$'] = "sys/$0";
-$route['^(submitkegiatan|loadkegiatan|actionkegiatan)(/:any)?$'] = "json/$0";
+$route['^(submitkegiatan|loadkegiatan|actionkegiatan|loadindikator|saveindikator)(/:any)?$'] = "json/$0";

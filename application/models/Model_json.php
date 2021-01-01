@@ -100,33 +100,29 @@ class Model_json extends CI_Model {
 
     }
 
-    public function loadkegiatan($param)
+    public function loadindikator($param)
     {
         $nama = $this->session->userdata('id');
         $kategori = $this->session->userdata('kategori');
         $id = $this->db->escape_str($nama);
-        $query = $this->db->query("select *, (select param_name from param_indikator where param_type = 'ssd' and param_id = kegiatan.indikator_ssd) as indikator_ssd_name, (select param_name from param_indikator where param_type = 'manager' and param_id = kegiatan.indikator_manager) as indikator_manager_name, (select param_name from param_indikator where param_type = 'uraian' and param_id = kegiatan.uraian_indikator) as indikator_uraian_name from kegiatan order by id desc")->result();
+        $param = $param['param'];
+        
+        $query = $this->db->query("select * from indikator where indikator_type = '$param' order by id desc")->result();
 
         return $query;
     }
 
 
-    public function saveRegis($params = NULL)
+    public function saveindikator($params = NULL, $id)
     {
         $valid = true;
-        $this->db->set("username", $params->username_regis);
-        $this->db->set("password", md5($params->password_regis));
-        $this->db->set("kotaKab", $params->kota_kab_regis);
-        $this->db->set("kategori", 'user');
-        $this->db->set("created_by", '');
-        $this->db->set("created_at", date("Y-m-d H:i:s"));
-        $this->db->set("role", '20');
-        $this->db->set("islogin", 0);
-        $this->db->set("status", '1');
-        $this->db->set("name", $params->name_regis);
-        $this->db->set("no_telp", $params->telp_regis);
-        $this->db->set("email", $params->email_regis);
-        $valid = $this->db->insert('muser');
+
+        $params->indikator_2 == 'undefined' ?   $params->indikator_2 = null :   $params->indikator_2 = $params->indikator_2;
+        $params->create_by = $id;
+        $params->create_date = date("Y-m-d H:i:s");
+
+        $this->db->set($params);
+        $valid = $this->db->insert('indikator');
 
         return $valid;
 

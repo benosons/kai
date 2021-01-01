@@ -53,6 +53,435 @@
               </div>
         </div>
     </div>
+    <!-- MODAL  -->
+    <div class="modal fade" id="modalssd" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+					<div class="modal-dialog modal-lg" role="document">
+					    <div class="modal-content">
+					        <div class="modal-header">
+					            <h5 class="modal-title" id="exampleModalLabel">Tambah Indikator SSD</h5>
+					            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					                <span aria-hidden="true">&times;</span>
+					            </button>
+					        </div>
+					        <div class="modal-body">
+                        <!-- <h5 class="card-title">Grid Rows</h5> -->
+                            <div class="form-row">
+                                <div class="col-md-6">
+                                  <div class="position-relative form-group">
+                                    <label class="card-title">Indikator</label>
+                                    <select id="ssd_indikator_1" class="multiselect-dropdown form-control">
+                                      <option value="0">-Pilih-</option>
+                                      <option value="Penyusunan Regulasi">Penyusunan Regulasi</option>
+                                      <option value="Peraturan Dinas">Peraturan Dinas</option>
+                                      <option value="SOP">SOP</option>
+                                      <option value="Standar Keselamatan">Standar Keselamatan</option>
+                                      <option value="Kajian terkait keselamatan sarana, prasarana, dan operasional perkeretaapian">Kajian terkait keselamatan sarana, prasarana, dan operasional perkeretaapian</option>
+                                    </select>
+                                  </div>
+                                </div>
+                                <div class="col-md-6">
+                                  <div class="position-relative form-group">
+                                    <label class="card-title">Keterangan</label>
+                                    <select id="ssd_keterangan" class="multiselect-dropdown form-control">
+                                      <option value="0">-Pilih-</option>
+                                      <option value="Penyusunan Regulasi">Penyusunan Regulasi</option>
+                                      <option value="Peraturan Dinas">Peraturan Dinas</option>
+                                      <option value="SOP">SOP</option>
+                                      <option value="Standar Keselamatan">Standar Keselamatan</option>
+                                      <option value="Kajian terkait keselamatan prasarana perkeretaapian">Kajian terkait keselamatan prasarana perkeretaapian</option>
+                                    </select>
+                                  </div>
+                                </div>
+                                <div class="col-md-4">
+                                  <div class="position-relative form-group">
+                                    <label class="card-title">Satuan</label>
+                                    <select id="ssd_satuan" class="multiselect-dropdown form-control">
+                                      <option value="0">-Pilih-</option>
+                                      <option value="angka">Angka</option>
+                                      <option value="%">%</option>
+                                    </select>
+                                  </div>
+                                </div>
+                                <div class="col-md-4">
+                                  <div class="position-relative form-group">
+                                      <label for="exampleState" class="card-title">Formula</label>
+                                      <input id="ssd_formula" name="state" id="exampleState" type="text" class="form-control">
+                                  </div>
+                                </div>
+                                <div class="col-md-4">
+                                  <div class="position-relative form-group">
+                                    <label class="card-title">Prioritas</label>
+                                    <select id="ssd_prioritas" class="multiselect-dropdown form-control">
+                                      <option value="0">-Pilih-</option>
+                                      <option value="heigh">Heigh</option>
+                                      <option value="low">Low</option>
+                                    </select>
+                                  </div>
+                                </div>
+                                <div class="col-md-6">
+                                  <div class="position-relative form-group">
+                                      <label for="exampleState" class="card-title">Target</label>
+                                      <input id="ssd_target" name="state" id="exampleState" type="text" class="form-control">
+                                  </div>
+                                </div>
+                                <div class="col-md-6">
+                                  <div class="position-relative form-group">
+                                      <label for="exampleState" class="card-title">Pencapaian SM I</label>
+                                      <input id="ssd_pencapaian_1" name="state" id="exampleState" type="text" class="form-control">
+                                  </div>
+                                </div>
+                                <div class="col-md-6">
+                                  <div class="position-relative form-group">
+                                      <label for="exampleState" class="card-title">Pencapaian SM II</label>
+                                      <input id="ssd_pencapaian_2" name="state" id="exampleState" type="text" class="form-control">
+                                  </div>
+                                </div>
+                                <div class="col-md-6">
+                                  <div class="position-relative form-group">
+                                      <label for="exampleState" class="card-title">Realisasi</label>
+                                      <input id="ssd_realisasi" name="state" id="exampleState" type="text" class="form-control">
+                                  </div>
+                                </div>
+                            </div>
+					        </div>
+					        <div class="modal-footer">
+					            <button type="button" class="btn btn-secondary" data-dismiss="modal">close</button>
+					            <button type="button" class="btn btn-primary" onclick="saveindikator('ssd')">Save</button>
+					        </div>
+					    </div>
+					</div>
+				</div>
+    <div class="modal fade" id="modalssdi" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+					<div class="modal-dialog modal-lg" role="document">
+					    <div class="modal-content">
+					        <div class="modal-header">
+					            <h5 class="modal-title" id="exampleModalLabel">Tambah Indikator SSDI</h5>
+					            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					                <span aria-hidden="true">&times;</span>
+					            </button>
+					        </div>
+					        <div class="modal-body">
+                        <!-- <h5 class="card-title">Grid Rows</h5> -->
+                            <div class="form-row">
+                                <div class="col-md-4">
+                                  <div class="position-relative form-group">
+                                    <label class="card-title">Indikator SSD</label>
+                                    <select id="ssdi_indikator_1" class="multiselect-dropdown form-control">
+                                      <option value="0">-Pilih-</option>
+                                      <option value="Penyusunan Regulasi">Penyusunan Regulasi</option>
+                                      <option value="Peraturan Dinas">Peraturan Dinas</option>
+                                      <option value="SOP">SOP</option>
+                                      <option value="Standar Keselamatan">Standar Keselamatan</option>
+                                      <option value="Kajian terkait keselamatan sarana, prasarana, dan operasional perkeretaapian">Kajian terkait keselamatan sarana, prasarana, dan operasional perkeretaapian</option>
+                                    </select>
+                                  </div>
+                                </div>
+                                <div class="col-md-4">
+                                  <div class="position-relative form-group">
+                                    <label class="card-title">Indikator SSDI</label>
+                                    <select id="ssdi_indikator_2" class="multiselect-dropdown form-control">
+                                      <option value="0">-Pilih-</option>
+                                      <option value="Penyusunan Regulasi">Penyusunan Regulasi</option>
+                                      <option value="Peraturan Dinas">Peraturan Dinas</option>
+                                      <option value="SOP">SOP</option>
+                                      <option value="Standar Keselamatan">Standar Keselamatan</option>
+                                      <option value="Kajian terkait keselamatan prasarana perkeretaapian">Kajian terkait keselamatan prasarana perkeretaapian</option>
+                                    </select>
+                                  </div>
+                                </div>
+                                <div class="col-md-4">
+                                  <div class="position-relative form-group">
+                                    <label class="card-title">Keterangan</label>
+                                    <select id="ssdi_keterangan" class="multiselect-dropdown form-control">
+                                      <option value="0">-Pilih-</option>
+                                      <option value="Penyusunan Regulasi">Penyusunan Regulasi</option>
+                                      <option value="Peraturan Dinas">Peraturan Dinas</option>
+                                      <option value="SOP">SOP</option>
+                                      <option value="Standar Keselamatan">Standar Keselamatan</option>
+                                      <option value="Kajian terkait keselamatan prasarana perkeretaapian">Kajian terkait keselamatan prasarana perkeretaapian</option>
+                                    </select>
+                                  </div>
+                                </div>
+                                <div class="col-md-4">
+                                  <div class="position-relative form-group">
+                                    <label class="card-title">Satuan</label>
+                                    <select id="ssdi_satuan" class="multiselect-dropdown form-control">
+                                      <option value="0">-Pilih-</option>
+                                      <option value="angka">Angka</option>
+                                      <option value="%">%</option>
+                                    </select>
+                                  </div>
+                                </div>
+                                <div class="col-md-4">
+                                  <div class="position-relative form-group">
+                                      <label for="exampleState" class="card-title">Formula</label>
+                                      <input id="ssdi_formula" name="state" id="exampleState" type="text" class="form-control">
+                                  </div>
+                                </div>
+                                <div class="col-md-4">
+                                  <div class="position-relative form-group">
+                                    <label class="card-title">Prioritas</label>
+                                    <select id="ssdi_prioritas" class="multiselect-dropdown form-control">
+                                      <option value="0">-Pilih-</option>
+                                      <option value="heigh">Heigh</option>
+                                      <option value="low">Low</option>
+                                    </select>
+                                  </div>
+                                </div>
+                                <div class="col-md-6">
+                                  <div class="position-relative form-group">
+                                      <label for="exampleState" class="card-title">Target</label>
+                                      <input id="ssdi_target" name="state" id="exampleState" type="text" class="form-control">
+                                  </div>
+                                </div>
+                                <div class="col-md-6">
+                                  <div class="position-relative form-group">
+                                      <label for="exampleState" class="card-title">Pencapaian SM I</label>
+                                      <input id="ssdi_pencapaian_1" name="state" id="exampleState" type="text" class="form-control">
+                                  </div>
+                                </div>
+                                <div class="col-md-6">
+                                  <div class="position-relative form-group">
+                                      <label for="exampleState" class="card-title">Pencapaian SM II</label>
+                                      <input id="ssdi_pencapaian_2" name="state" id="exampleState" type="text" class="form-control">
+                                  </div>
+                                </div>
+                                <div class="col-md-6">
+                                  <div class="position-relative form-group">
+                                      <label for="exampleState" class="card-title">Realisasi</label>
+                                      <input id="ssdi_realisasi" name="state" id="exampleState" type="text" class="form-control">
+                                  </div>
+                                </div>
+                            </div>
+					        </div>
+					        <div class="modal-footer">
+					            <button type="button" class="btn btn-secondary" data-dismiss="modal">close</button>
+					            <button type="button" class="btn btn-primary" onclick="saveindikator('ssdi')">Save</button>
+					        </div>
+					    </div>
+					</div>
+				</div>
+    <div class="modal fade" id="modalssdr" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+					<div class="modal-dialog modal-lg" role="document">
+					    <div class="modal-content">
+					        <div class="modal-header">
+					            <h5 class="modal-title" id="exampleModalLabel">Tambah Indikator SSDR</h5>
+					            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					                <span aria-hidden="true">&times;</span>
+					            </button>
+					        </div>
+					        <div class="modal-body">
+                        <!-- <h5 class="card-title">Grid Rows</h5> -->
+                            <div class="form-row">
+                                <div class="col-md-6">
+                                  <div class="position-relative form-group">
+                                    <label class="card-title">Indikator SSD</label>
+                                    <select id="ssdr_indikator_1" class="multiselect-dropdown form-control">
+                                      <option value="0">-Pilih-</option>
+                                      <option value="Penyusunan Regulasi">Penyusunan Regulasi</option>
+                                      <option value="Peraturan Dinas">Peraturan Dinas</option>
+                                      <option value="SOP">SOP</option>
+                                      <option value="Standar Keselamatan">Standar Keselamatan</option>
+                                      <option value="Kajian terkait keselamatan sarana, prasarana, dan operasional perkeretaapian">Kajian terkait keselamatan sarana, prasarana, dan operasional perkeretaapian</option>
+                                    </select>
+                                  </div>
+                                </div>
+                                <div class="col-md-6">
+                                  <div class="position-relative form-group">
+                                    <label class="card-title">Indikator SSDI</label>
+                                    <select id="ssdr_indikator_2" class="multiselect-dropdown form-control">
+                                      <option value="0">-Pilih-</option>
+                                      <option value="Penyusunan Regulasi">Penyusunan Regulasi</option>
+                                      <option value="Peraturan Dinas">Peraturan Dinas</option>
+                                      <option value="SOP">SOP</option>
+                                      <option value="Standar Keselamatan">Standar Keselamatan</option>
+                                      <option value="Kajian terkait keselamatan sarana perkeretaapian">Kajian terkait keselamatan sarana perkeretaapian</option>
+                                    </select>
+                                  </div>
+                                </div>
+                                <div class="col-md-6">
+                                  <div class="position-relative form-group">
+                                    <label class="card-title">Keterangan</label>
+                                    <select id="ssdr_keterangan" class="multiselect-dropdown form-control">
+                                      <option value="0">-Pilih-</option>
+                                      <option value="Penyusunan Regulasi">Penyusunan Regulasi</option>
+                                      <option value="Peraturan Dinas">Peraturan Dinas</option>
+                                      <option value="SOP">SOP</option>
+                                      <option value="Standar Keselamatan">Standar Keselamatan</option>
+                                      <option value="Kajian terkait keselamatan sarana perkeretaapian">Kajian terkait keselamatan sarana perkeretaapian</option>
+                                    </select>
+                                  </div>
+                                </div>
+                                <div class="col-md-4">
+                                  <div class="position-relative form-group">
+                                    <label class="card-title">Satuan</label>
+                                    <select id="ssdr_satuan" class="multiselect-dropdown form-control">
+                                      <option value="0">-Pilih-</option>
+                                      <option value="angka">Angka</option>
+                                      <option value="%">%</option>
+                                    </select>
+                                  </div>
+                                </div>
+                                <div class="col-md-4">
+                                  <div class="position-relative form-group">
+                                      <label for="exampleState" class="card-title">Formula</label>
+                                      <input id="ssdr_formula" name="state" id="exampleState" type="text" class="form-control">
+                                  </div>
+                                </div>
+                                <div class="col-md-4">
+                                  <div class="position-relative form-group">
+                                    <label class="card-title">Prioritas</label>
+                                    <select id="ssdr_prioritas" class="multiselect-dropdown form-control">
+                                      <option value="0">-Pilih-</option>
+                                      <option value="heigh">Heigh</option>
+                                      <option value="low">Low</option>
+                                    </select>
+                                  </div>
+                                </div>
+                                <div class="col-md-6">
+                                  <div class="position-relative form-group">
+                                      <label for="exampleState" class="card-title">Target</label>
+                                      <input id="ssdr_target" name="state" id="exampleState" type="text" class="form-control">
+                                  </div>
+                                </div>
+                                <div class="col-md-6">
+                                  <div class="position-relative form-group">
+                                      <label for="exampleState" class="card-title">Pencapaian SM I</label>
+                                      <input id="ssdr_pencapaian_1" name="state" id="exampleState" type="text" class="form-control">
+                                  </div>
+                                </div>
+                                <div class="col-md-6">
+                                  <div class="position-relative form-group">
+                                      <label for="exampleState" class="card-title">Pencapaian SM II</label>
+                                      <input id="ssdr_pencapaian_2" name="state" id="exampleState" type="text" class="form-control">
+                                  </div>
+                                </div>
+                                <div class="col-md-6">
+                                  <div class="position-relative form-group">
+                                      <label for="exampleState" class="card-title">Realisasi</label>
+                                      <input id="ssdr_realisasi" name="state" id="exampleState" type="text" class="form-control">
+                                  </div>
+                                </div>
+                            </div>
+					        </div>
+					        <div class="modal-footer">
+					            <button type="button" class="btn btn-secondary" data-dismiss="modal">close</button>
+					            <button type="button" class="btn btn-primary" onclick="saveindikator('ssdr')">Save</button>
+					        </div>
+					    </div>
+					</div>
+				</div>
+    <div class="modal fade" id="modalssdt" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+					<div class="modal-dialog modal-lg" role="document">
+					    <div class="modal-content">
+					        <div class="modal-header">
+					            <h5 class="modal-title" id="exampleModalLabel">Tambah Indikator SSDT</h5>
+					            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					                <span aria-hidden="true">&times;</span>
+					            </button>
+					        </div>
+					        <div class="modal-body">
+                        <!-- <h5 class="card-title">Grid Rows</h5> -->
+                            <div class="form-row">
+                                <div class="col-md-6">
+                                  <div class="position-relative form-group">
+                                    <label class="card-title">Indikator SSD</label>
+                                    <select id="ssdt_indikator_1" class="multiselect-dropdown form-control">
+                                      <option value="0">-Pilih-</option>
+                                      <option value="Penyusunan Regulasi">Penyusunan Regulasi</option>
+                                      <option value="Peraturan Dinas">Peraturan Dinas</option>
+                                      <option value="SOP">SOP</option>
+                                      <option value="Standar Keselamatan">Standar Keselamatan</option>
+                                      <option value="Kajian terkait keselamatan sarana, prasarana, dan operasional perkeretaapian">Kajian terkait keselamatan sarana, prasarana, dan operasional perkeretaapian</option>
+                                    </select>
+                                  </div>
+                                </div>
+                                <div class="col-md-6">
+                                  <div class="position-relative form-group">
+                                    <label class="card-title">Indikator SSDI</label>
+                                    <select id="ssdt_indikator_2" class="multiselect-dropdown form-control">
+                                      <option value="0">-Pilih-</option>
+                                      <option value="Penyusunan Regulasi">Penyusunan Regulasi</option>
+                                      <option value="Peraturan Dinas">Peraturan Dinas</option>
+                                      <option value="SOP">SOP</option>
+                                      <option value="Standar Keselamatan">Standar Keselamatan</option>
+                                      <option value="Kajian terkait keselamatan operasional perkeretaapian">Kajian terkait keselamatan operasional perkeretaapian</option>
+                                    </select>
+                                  </div>
+                                </div>
+                                <div class="col-md-6">
+                                  <div class="position-relative form-group">
+                                    <label class="card-title">Keterangan</label>
+                                    <select id="ssdt_keterangan" class="multiselect-dropdown form-control">
+                                      <option value="0">-Pilih-</option>
+                                      <option value="Penyusunan Regulasi">Penyusunan Regulasi</option>
+                                      <option value="Peraturan Dinas">Peraturan Dinas</option>
+                                      <option value="SOP">SOP</option>
+                                      <option value="Standar Keselamatan">Standar Keselamatan</option>
+                                      <option value="Kajian terkait keselamatan operasional perkeretaapian">Kajian terkait keselamatan operasional perkeretaapian</option>
+                                    </select>
+                                  </div>
+                                </div>
+                                <div class="col-md-4">
+                                  <div class="position-relative form-group">
+                                    <label class="card-title">Satuan</label>
+                                    <select id="ssdt_satuan" class="multiselect-dropdown form-control">
+                                      <option value="0">-Pilih-</option>
+                                      <option value="angka">Angka</option>
+                                      <option value="%">%</option>
+                                    </select>
+                                  </div>
+                                </div>
+                                <div class="col-md-4">
+                                  <div class="position-relative form-group">
+                                      <label for="exampleState" class="card-title">Formula</label>
+                                      <input id="ssdt_formula" name="state" id="exampleState" type="text" class="form-control">
+                                  </div>
+                                </div>
+                                <div class="col-md-4">
+                                  <div class="position-relative form-group">
+                                    <label class="card-title">Prioritas</label>
+                                    <select id="ssdt_prioritas" class="multiselect-dropdown form-control">
+                                      <option value="0">-Pilih-</option>
+                                      <option value="heigh">Heigh</option>
+                                      <option value="low">Low</option>
+                                    </select>
+                                  </div>
+                                </div>
+                                <div class="col-md-6">
+                                  <div class="position-relative form-group">
+                                      <label for="exampleState" class="card-title">Target</label>
+                                      <input id="ssdt_target" name="state" id="exampleState" type="text" class="form-control">
+                                  </div>
+                                </div>
+                                <div class="col-md-6">
+                                  <div class="position-relative form-group">
+                                      <label for="exampleState" class="card-title">Pencapaian SM I</label>
+                                      <input id="ssdt_pencapaian_1" name="state" id="exampleState" type="text" class="form-control">
+                                  </div>
+                                </div>
+                                <div class="col-md-6">
+                                  <div class="position-relative form-group">
+                                      <label for="exampleState" class="card-title">Pencapaian SM II</label>
+                                      <input id="ssdt_pencapaian_2" name="state" id="exampleState" type="text" class="form-control">
+                                  </div>
+                                </div>
+                                <div class="col-md-6">
+                                  <div class="position-relative form-group">
+                                      <label for="exampleState" class="card-title">Realisasi</label>
+                                      <input id="ssdt_realisasi" name="state" id="exampleState" type="text" class="form-control">
+                                  </div>
+                                </div>
+                            </div>
+					        </div>
+					        <div class="modal-footer">
+					            <button type="button" class="btn btn-secondary" data-dismiss="modal">close</button>
+					            <button type="button" class="btn btn-primary" onclick="saveindikator('ssdt')">Save</button>
+					        </div>
+					    </div>
+					</div>
+				</div>
+    <!--  -->
     <div class="app-drawer-wrapper">
         <div class="drawer-nav-btn">
             <button type="button" class="hamburger hamburger--elastic is-active">
