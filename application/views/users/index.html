@@ -89,7 +89,7 @@
 <!-- section close -->
 
 <!-- section begin -->
-<section id="section-intro-bg" data-stellar-background-ratio="0.5">
+<section id="section-intro-bg" name="visi-misi" data-stellar-background-ratio="0.5">
     <div class="container">
         <div class="row">
 
@@ -141,6 +141,12 @@
                             </div>
 
                         </div>
+                        <div class="col-md-6 col-md-offset-3s">
+
+                          <img src="{{baseURL}}assets/gocargo/img/bg/bg_side_4.jpg" style="display: block;margin-left: auto;margin-right: auto;width: 100%;">
+
+
+                        </div>
 
 
                     </div>
@@ -154,7 +160,7 @@
 
 
 <!-- section begin -->
-<section id="section-track" class="no-padding light-text alt">
+<section id="section-track" class="no-padding light-text alt" hidden>
     <div class="container">
         <div class="row">
             <div class="col-md-9">
@@ -275,7 +281,7 @@
 
 
 <!-- section begin -->
-<section id="explore-6" class="side-bg" style="padding: 0 0 0 0;background-color:#F08200">
+<section id="explore-6" class="side-bg" style="padding: 0 0 0 0;background-color:#F08200" hidden>
     <!-- <div class="col-md-6 col-md-offset-3 pull-right image-container">
         <div class="background-image"></div>
     </div> -->
@@ -466,4 +472,78 @@
     </div>
 </section> -->
 <!-- section close -->
+<section id="section-intro-bg-2" name="kontak-us" data-stellar-background-ratio="0.5">
+  <div class="container" style="background-size: cover;">
+    <div class="row" style="background-size: cover;">
+      <div class="col-md-4" style="background-size: cover;">
+				  <h2 style="color:#F08200;">HUBUNGI <b style="color:#fff;">KAMI</b></h2>
+          <div class="tiny-border"></div>
+      </div>
+      <div class="col-md-8" style="background-size: cover;">
+				  <h2 style="color:#F08200;">KONTAK <b style="color:#fff;">KAMI</b></h2>
+          <div class="tiny-border"></div>
+      </div>
+    </div>
+    <div class="row" style="background-size: cover;">
+        <div class="col-md-4" style="background-size: cover;">
+            <form id="contact" class="row form-transparent" name="form1" method="post" action="contact.html">
+                <div class="col-md-12" style="background-size: cover;">
+                    <input type="text" class="form-control" name="name" id="name" placeholder="Nama*">
+                </div>
+
+                <div class="col-md-12" style="background-size: cover;">
+                    <div id="error_email" class="error" style="background-size: cover;">email</div>
+                    <input type="text" class="form-control" name="email" id="email" placeholder="Email*">
+                </div>
+
+                <div class="col-md-12" style="background-size: cover;">
+                    <div id="error_message" class="error" style="background-size: cover;">Please check your message</div>
+                    <textarea cols="10" rows="10" name="message" id="message" class="form-control" placeholder="Your message"></textarea>
+                </div>
+
+                <div id="mail_success" class="col-md-12 success" style="background-size: cover;">Thank you. Your message has been sent.</div>
+                <div id="mail_failed" class="col-md-12 error" style="background-size: cover;">Error, email not sent</div>
+
+                <div class="col-md-12" style="background-size: cover;">
+                    <p id="btnsubmit">
+                        <input type="submit" id="send" value="Send" class="btn btn-custom fullwidth">
+                    </p>
+                </div>
+
+            </form>
+        </div>
+        <div class="col-md-8" style="background-size: cover;">
+          <div class="row" style="background-size: cover;">
+            <div class="col-md-5" style="background-size: cover;">
+                <div class="info-box padding20" style="background-size: cover;">
+                    <i class="fa fa-map-marker" style="padding-top: 15px;font-size: 30px;"></i>
+                    <div class="info-box_text" style="background-size: cover;">
+                        <div class="info-box_subtite" style="background-size: cover;color:#fff;">Jl. Perintis Kemerdekaan No.1, Babakan Ciamis, Kec. Sumur Bandung, Kota Bandung</div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4" style="background-size: cover;">
+                <div class="info-box padding20" style="background-size: cover;">
+                    <i class="fa fa-envelope" style="padding-top: 15px;font-size: 30px;"></i>
+                    <div class="info-box_text" style="background-size: cover;">
+                        <div class="info-box_subtite" style="background-size: cover;color:#fff;padding-top:15px;">safety.standart@kai.id</div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3" style="background-size: cover;">
+                <div class="info-box padding20" style="background-size: cover;">
+                    <i class="fa fa-phone" style="padding-top: 15px;font-size: 30px;"></i>
+                    <div class="info-box_text" style="background-size: cover;">
+                        <div class="info-box_subtite" style="background-size: cover;color:#fff;padding-top:15px;">10553</div>
+                    </div>
+                </div>
+            </div>
+          </div>
+            <div class="light-text" style="background-size: cover;">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3960.804412813158!2d107.60424571477907!3d-6.913973569589813!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e68e63a4a793189%3A0xa680059040fd8f2f!2sPT.%20Kereta%20Api%20Indonesia%20(Persero)!5e0!3m2!1sid!2sid!4v1609573897000!5m2!1sid!2sid" width="100%" height="400" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+            </div>
+        </div>
+    </div>
+  </div>
+</section>
 {% endblock %}
