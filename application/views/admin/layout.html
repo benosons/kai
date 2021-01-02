@@ -481,6 +481,133 @@
 					    </div>
 					</div>
 				</div>
+    <div class="modal fade" id="modaldokumen" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+					<div class="modal-dialog modal-lg" role="document">
+					    <div class="modal-content">
+					        <div class="modal-header">
+					            <h5 class="modal-title" id="exampleModalLabel">Tambah Dokumen</h5>
+					            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					                <span aria-hidden="true">&times;</span>
+					            </button>
+					        </div>
+					        <div class="modal-body">
+                        <!-- <h5 class="card-title">Grid Rows</h5> -->
+                            <div class="form-row">
+                                <div class="col-md-6">
+                                  <div class="position-relative form-group">
+                                    <label class="card-title">Jenis Dokumen</label>
+                                    <select id="jenis_dokumen" class="multiselect-dropdown form-control">
+                                      <option value="0">-Pilih-</option>
+                                      <option value="Peraturan Dinas">Peraturan Dinas</option>
+                                      <option value="SOP">SOP</option>
+                                      <option value="Kajian dan Rekomendasi Keselamatan">Kajian dan Rekomendasi Keselamatan</option>
+                                      <option value="SNI">SNI</option>
+                                      <option value="MoU">MoU</option>
+                                      <option value="PKS">PKS</option>
+                                      <option value="Riset & Inovasi">Riset & Inovasi</option>
+                                      <option value="Peraturan Direksi">Peraturan Direksi</option>
+                                      <option value="Lainnya">Lainnya</option>
+                                    </select>
+                                  </div>
+                                </div>
+                                <div class="col-md-6">
+                                  <div class="position-relative form-group">
+                                      <label for="exampleState" class="card-title">Nama Dokumen</label>
+                                      <input id="nama_dokumen" name="state" type="text" class="form-control">
+                                  </div>
+                                </div>
+                                <div class="col-md-6">
+                                  <div class="position-relative form-group">
+                                      <label for="exampleState" class="card-title">Uraian Singkat Isi Dokumen</label>
+                                      <input id="uraian_singkat" name="state" type="text" class="form-control">
+                                  </div>
+                                </div>
+                                <div class="col-md-3">
+    															<div class="position-relative form-group">
+    																	<label for="exampleState" class="card-title">Tanggal Keluar</label>
+    																	<input id="tanggal_keluar" type="text" class="form-control" data-toggle="datepicker"/>
+    															</div>
+    														</div>
+                                <div class="col-md-3">
+                                  <div class="position-relative form-group">
+                                      <label for="exampleState" class="card-title">Dokumen</label>
+                                      <input id="dokumen" name="state" type="text" class="form-control">
+                                  </div>
+                                </div>
+                            </div>
+					        </div>
+					        <div class="modal-footer">
+					            <button type="button" class="btn btn-secondary" data-dismiss="modal">close</button>
+					            <button type="button" class="btn btn-primary" onclick="saveindikator('dokumen')">Save</button>
+					        </div>
+					    </div>
+					</div>
+				</div>
+    <div class="modal fade" id="modalrka" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal-dialog modal-lg" role="document">
+                  <div class="modal-content">
+                      <div class="modal-header">
+                          <h5 class="modal-title" id="exampleModalLabel">Tambah RKA</h5>
+                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                              <span aria-hidden="true">&times;</span>
+                          </button>
+                      </div>
+                      <div class="modal-body">
+                            <!-- <h5 class="card-title">Grid Rows</h5> -->
+                                <div class="form-row">
+                                    <div class="col-md-6">
+                                      <div class="position-relative form-group">
+                                        <label class="card-title">Tahun</label>
+                                        <select id="rka_tahun" class="multiselect-dropdown form-control">
+                                          <option value="0">-Pilih-</option>
+                                          <option value="2017">2017</option>
+                                          <option value="2018">2018</option>
+                                          <option value="2019">2019</option>
+                                          <option value="2020">2020</option>
+                                          <option value="2021">2021</option>
+                                        </select>
+                                      </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                      <div class="position-relative form-group">
+                                          <label for="exampleState" class="card-title">Update Tanggal</label>
+                                          <input id="rka_update_tanggal" type="text" class="form-control" data-toggle="datepicker"/>
+                                      </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                      <div class="position-relative form-group">
+                                          <label for="exampleState" class="card-title">Program (Rp)</label>
+                                          <input id="rka_program" name="state" type="text" class="form-control">
+                                      </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                      <div class="position-relative form-group">
+                                          <label for="exampleState" class="card-title">Realisasi (Rp)</label>
+                                          <input id="rka_realisasi" name="state" type="text" class="form-control">
+                                      </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                      <div class="position-relative form-group">
+                                          <label for="exampleState" class="card-title">Penyerapan (%)</label>
+                                          <input id="rka_penyerapan" name="state" type="text" class="form-control">
+                                      </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                      <div class="position-relative form-group">
+                                          <label for="exampleState" class="card-title">Penyerapan (%)</label>
+                                          <input id="rka_dokumen" name="state" type="text" class="form-control">
+                                      </div>
+                                    </div>
+
+                                </div>
+                      </div>
+                      <div class="modal-footer">
+                          <button type="button" class="btn btn-secondary" data-dismiss="modal">close</button>
+                          <button type="button" class="btn btn-primary" onclick="saveindikator('rka')">Save</button>
+                      </div>
+                  </div>
+              </div>
+            </div>
     <!--  -->
     <div class="app-drawer-wrapper">
         <div class="drawer-nav-btn">

@@ -106,8 +106,34 @@ class Model_json extends CI_Model {
         $kategori = $this->session->userdata('kategori');
         $id = $this->db->escape_str($nama);
         $param = $param['param'];
-        
+
         $query = $this->db->query("select * from indikator where indikator_type = '$param' order by id desc")->result();
+
+        return $query;
+    }
+
+    public function loaddokumen($param)
+    {
+
+        $nama = $this->session->userdata('id');
+        $kategori = $this->session->userdata('kategori');
+        $id = $this->db->escape_str($nama);
+        $param = $param['param'];
+
+        $query = $this->db->query("select * from dokumen order by id desc")->result();
+
+        return $query;
+    }
+
+    public function loadrka($param)
+    {
+
+        $nama = $this->session->userdata('id');
+        $kategori = $this->session->userdata('kategori');
+        $id = $this->db->escape_str($nama);
+        $param = $param['param'];
+
+        $query = $this->db->query("select * from rka order by id desc")->result();
 
         return $query;
     }
@@ -123,6 +149,34 @@ class Model_json extends CI_Model {
 
         $this->db->set($params);
         $valid = $this->db->insert('indikator');
+
+        return $valid;
+
+    }
+
+    public function savedokumen($params = NULL, $id)
+    {
+        $valid = true;
+        $table = $params->table;
+        unset($params->table);
+        $params->create_by = $id;
+        $params->create_date = date("Y-m-d H:i:s");
+        $this->db->set($params);
+        $valid = $this->db->insert($table);
+
+        return $valid;
+
+    }
+
+    public function saverka($params = NULL, $id)
+    {
+        $valid = true;
+        $table = $params->table;
+        unset($params->table);
+        $params->create_by = $id;
+        $params->create_date = date("Y-m-d H:i:s");
+        $this->db->set($params);
+        $valid = $this->db->insert($table);
 
         return $valid;
 

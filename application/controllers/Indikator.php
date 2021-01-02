@@ -49,7 +49,7 @@ class Indikator extends CI_Controller {
 		{
 			$this->content['page'] = 'ssd';
 			$this->content['js'] = '/assets/js/action/indikator/indikator.js';
-			$this->twig->display('admin/kegiatan/ssd.html', $this->content);
+			$this->twig->display('admin/indikator/ssd.html', $this->content);
 		}else{
 			redirect("dashboard");
 		}
@@ -61,7 +61,7 @@ class Indikator extends CI_Controller {
 		{
 			$this->content['page'] = 'ssdi';
 			$this->content['js'] = '/assets/js/action/indikator/indikator.js';
-			$this->twig->display('admin/kegiatan/ssdi.html', $this->content);
+			$this->twig->display('admin/indikator/ssdi.html', $this->content);
 		}else{
 			redirect("dashboard");
 		}
@@ -73,7 +73,7 @@ class Indikator extends CI_Controller {
 		{
 			$this->content['page'] = 'ssdr';
 			$this->content['js'] = '/assets/js/action/indikator/indikator.js';
-			$this->twig->display('admin/kegiatan/ssdr.html', $this->content);
+			$this->twig->display('admin/indikator/ssdr.html', $this->content);
 		}else{
 			redirect("dashboard");
 		}
@@ -85,10 +85,35 @@ class Indikator extends CI_Controller {
 		{
 			$this->content['page'] = 'ssdt';
 			$this->content['js'] = '/assets/js/action/indikator/indikator.js';
-			$this->twig->display('admin/kegiatan/ssdt.html', $this->content);
+			$this->twig->display('admin/indikator/ssdt.html', $this->content);
 		}else{
 			redirect("dashboard");
 		}
 	}
+
+	public function dokumen()
+	{
+		if ( $this->logged && $this->role == '10' || $this->role == '20')
+		{
+			$this->content['page'] = 'dokumen';
+			$this->content['js'] = '/assets/js/action/indikator/indikator.js';
+			$this->twig->display('admin/indikator/dokumen.html', $this->content);
+		}else{
+			redirect("dashboard");
+		}
+	}
+
+	public function rka()
+	{
+		if ( $this->logged && $this->role == '10' || $this->role == '20')
+		{
+			$this->content['page'] = 'rka';
+			$this->content['js'] = '/assets/js/action/indikator/indikator.js';
+			$this->twig->display('admin/indikator/rka.html', $this->content);
+		}else{
+			redirect("dashboard");
+		}
+	}
+
 
 }

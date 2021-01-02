@@ -87,8 +87,14 @@ class Json extends CI_Controller {
 
 			$params = $this->input->post();
 			$postData = $this->input->post('param');
+			if($params['param'] == 'dokumen'){
+				$query = $this->Model_json->loaddokumen($params);
+			}else if($params['param'] == 'rka'){
+				$query = $this->Model_json->loadrka($params);
+			}else{
+				$query = $this->Model_json->loadindikator($params);
+			}
 
-			$query = $this->Model_json->loadindikator($params);
 			$data = $query;
 
 			header('Content-Type: application/json');
@@ -98,7 +104,13 @@ class Json extends CI_Controller {
 	public function saveindikator(){
 
 			$params = (object)$this->input->post();
-			$query = $this->Model_json->saveindikator($params, $this->id);
+			if($params->table == 'dokumen'){
+				$query = $this->Model_json->savedokumen($params, $this->id);
+			}else if($params->table == 'rka'){
+				$query = $this->Model_json->saverka($params, $this->id);
+			}else{
+				$query = $this->Model_json->saveindikator($params, $this->id);
+			}
 			$data = $query;
 
 			header('Content-Type: application/json');
