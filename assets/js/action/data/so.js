@@ -1,6 +1,6 @@
 $( document ).ready(function() {
   $('#menu-so').addClass('mm-active');
-
+  window.baseURL = $('#baseURL').val();
   loadkegiatan('')
 });
 
@@ -36,7 +36,7 @@ function loadkegiatan(param){
                             var el =
                               `<div class="avatar-icon-wrapper mr-3 avatar-icon-xl btn-hover-shine">
                                                     <div class="avatar-icon rounded">
-                                                        <img src="`+data+`" alt="Avatar 5">
+                                                        <img src="`window.baseURL+data+`" alt="Avatar 5">
                                                     </div>
                                                 </div>`;
                               return el;
@@ -134,7 +134,7 @@ function action(id){
             "Update!",
             "success"
           ).then((value) => {
-            window.location.href = '/inputso';
+            window.location.href = window.baseURL+'inputso';
           });
         }
       });
