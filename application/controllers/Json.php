@@ -70,13 +70,45 @@ class Json extends CI_Controller {
 
 	}
 
+	public function submitso()
+	{
+		$params = (object)$this->input->post();
+		$name = strtolower(str_replace(' ', '_', $_FILES['file_data']['name']));
+		$path			= FCPATH;
+		$bag			= 'assets/dokumen/so';
+		$date 		= date('Y/m/d');
+		$folder		= $path.'/'.$bag.'/'.$date.'/';
+		if (!is_dir($folder)) {
+		    mkdir($folder, 0777, TRUE);
+		}
+		$tmp_file = $_FILES['file_data']['tmp_name'];
+		move_uploaded_file($tmp_file, $folder.$name);
+		$params->foto = '/'.$bag.'/'.$date.'/'.$name;
+		unset($params->file_data);
+		$data = $this->Model_json->saveso($params);
+		header('Content-Type: application/json');
+		echo json_encode(array("status" => TRUE));
+
+	}
+
 	public function loadkegiatan(){
 
 			$params = $columns = $totalRecords = $data = array();
 			$params = $_REQUEST;
 			$postData = $this->input->post('param');
-
 			$query = $this->Model_json->loadkegiatan($this->id);
+			$data = $query;
+
+			header('Content-Type: application/json');
+			echo json_encode($data);
+	}
+
+	public function loadso(){
+
+			$params = $columns = $totalRecords = $data = array();
+			$params = $_REQUEST;
+			$postData = $this->input->post('param');
+			$query = $this->Model_json->loadso($this->id);
 			$data = $query;
 
 			header('Content-Type: application/json');

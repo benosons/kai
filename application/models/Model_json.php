@@ -100,6 +100,26 @@ class Model_json extends CI_Model {
 
     }
 
+    public function saveso($params = NULL)
+    {
+        $valid = true;
+        $convertDate = date("Y-m-d", strtotime($params->tanggal));
+
+        $this->db->set($params);
+        $this->db->set("create_date", date("Y-m-d H:i:s"));
+        $this->db->set("create_by", $this->session->userdata('username'));
+        if($params->foto){
+          $this->db->set("foto", $params->foto);
+        }else{
+          unset($params->foto);
+        }
+        $this->db->where('id', $params->id);
+        $valid = $this->db->update('so');
+
+        return $valid;
+
+    }
+
     public function loadindikator($param)
     {
         $nama = $this->session->userdata('id');
@@ -242,6 +262,26 @@ class Model_json extends CI_Model {
         $kategori = $this->session->userdata('kategori');
         $id = $this->db->escape_str($nama);
         $query = $this->db->query("select * from kabupaten_kota order by id desc")->result();
+
+        return $query;
+    }
+
+    public function loadkegiatan($param)
+    {
+        $nama = $this->session->userdata('id');
+        $kategori = $this->session->userdata('kategori');
+        $id = $this->db->escape_str($nama);
+        $query = $this->db->query("select * from kegiatan order by id desc")->result();
+
+        return $query;
+    }
+
+    public function loadso($param)
+    {
+        $nama = $this->session->userdata('id');
+        $kategori = $this->session->userdata('kategori');
+        $id = $this->db->escape_str($nama);
+        $query = $this->db->query("select * from so order by id asc")->result();
 
         return $query;
     }
