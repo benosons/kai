@@ -23,7 +23,9 @@ function loadkegiatan(param){
         success: function(result){
           console.log(result);
           for (var i = 0; i < result.length; i++) {
-              $('#foto-'+result[i].id).attr('src', window.baseURL+result[i].foto);
+              if(result[i].foto){
+                $('#foto-'+result[i].id).attr('src', window.baseURL+result[i].foto);
+              }
               $('#singkatan-'+result[i].id).text(result[i].singkatan);
               $('#nama_jabatan-'+result[i].id).text(result[i].nama_jabatan);
               $('#nama_pejabat-'+result[i].id).text(result[i].nama_pejabat);
