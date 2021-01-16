@@ -32,3 +32,20 @@ function loadkegiatan(param){
         }
       });
     }
+
+$('.tf-nc').on('click', function(){
+  let foto = $(this).find("img").attr('src');
+  let singkatan_id = $(this).find("h6").get(0).id;
+    let singkatan = $('#'+singkatan_id).text();
+  let nama_jabatan_id = $(this).find("h6").get(1).id;
+    let nama_jabatan = $('#'+nama_jabatan_id).text();
+  let nama_pejabat_id = $(this).find("h6").get(2).id;
+    let nama_pejabat = $('#'+nama_pejabat_id).text();
+  let nipp_id = $(this).find("h6").get(3).id;
+    let nipp = $('#'+nipp_id).text();
+  console.log(nipp);
+  $('#modal_foto').attr('src', foto);
+  $('#modal_nama_jabatan').text(singkatan + ' - ' + nama_jabatan);
+  $('#modal_nama').html('<strong>'+nama_pejabat+'</strong><br>'+nipp);
+  $('#myModal').modal('show');
+});
