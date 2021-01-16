@@ -59,7 +59,7 @@ function loadkegiatan(param){
                       },
                       {
                           mRender: function ( data, type, row ) {
-                            var el = `<input id="desc-`+row.id+`" name="input-so" type="text" class="form-control" value="`+data+`">`;
+                            var el = `<textarea id="desc-`+row.id+`" name="input-so" type="text" class="form-control" value="`+data+`">`+data+`</textarea>`;
                               return el;
                           },
                           aTargets: [ 6 ]

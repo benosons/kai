@@ -30,6 +30,7 @@ function loadkegiatan(param){
               $('#nama_jabatan-'+result[i].id).text(result[i].nama_jabatan);
               $('#nama_pejabat-'+result[i].id).text(result[i].nama_pejabat);
               $('#nipp-'+result[i].id).text(result[i].nipp);
+              $('#desc-'+result[i].id).val(result[i].deskripsi_jabatan);
           }
         }
       });
@@ -45,9 +46,12 @@ $('.tf-nc').on('click', function(){
     let nama_pejabat = $('#'+nama_pejabat_id).text();
   let nipp_id = $(this).find("h6").get(3).id;
     let nipp = $('#'+nipp_id).text();
-  console.log(nipp);
+  let desc_id = $(this).find("input").get(0).id;
+    let desc = $('#'+desc_id).val();
+  console.log(desc);
   $('#modal_foto').attr('src', foto);
   $('#modal_nama_jabatan').text(singkatan + ' - ' + nama_jabatan);
   $('#modal_nama').html('<strong>'+nama_pejabat+'</strong><br>'+nipp);
+  $('#modal_desc').html('<label>Deskripsi : </label> ' + desc);
   $('#myModal').modal('show');
 });
