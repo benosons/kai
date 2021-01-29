@@ -59,5 +59,5 @@ $route['^(logout|loginAdmin|Admin|register|cekusername)(/:any)?$'] = "auth/$0";
 $route['^(listdata|tambahdata|reportdata|kegiatan|tambahkegiatan|detailkegiatan)(/:any)?$'] = "data/$0";
 $route['^(ssd|ssdi|ssdr|ssdt|dokumen|rka)(/:any)?$'] = "indikator/$0";
 $route['^(dashboard)(/:any)?$'] = "sys/$0";
-$route['^(submitkegiatan|loadkegiatan|actionkegiatan|loadindikator|saveindikator|loadso|submitso)(/:any)?$'] = "json/$0";
+$route['^(submitkegiatan|loadkegiatan|actionkegiatan|loadindikator|saveindikator|loadso|submitso|actionindikator)(/:any)?$'] = "json/$0";
 $route['^(so|inputso)(/:any)?$'] = "view/$0";

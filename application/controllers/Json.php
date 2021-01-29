@@ -137,6 +137,18 @@ class Json extends CI_Controller {
 
 			$params = (object)$this->input->post();
 			if($params->table == 'dokumen'){
+				$name = strtolower(str_replace(' ', '_', $_FILES['file_data']['name']));
+				$path			= FCPATH;
+				$bag			= 'assets/dokumen/dokumen';
+				$date 		= date('Y/m/d');
+				$folder		= $path.'/'.$bag.'/'.$date.'/';
+				if (!is_dir($folder)) {
+				    mkdir($folder, 0777, TRUE);
+				}
+				$tmp_file = $_FILES['file_data']['tmp_name'];
+				move_uploaded_file($tmp_file, $folder.$name);
+				$params->dokumen = '/'.$bag.'/'.$date.'/'.$name;
+
 				$query = $this->Model_json->savedokumen($params, $this->id);
 			}else if($params->table == 'rka'){
 				$query = $this->Model_json->saverka($params, $this->id);
@@ -161,6 +173,19 @@ class Json extends CI_Controller {
 			// }
 		}
 
+		header('Content-Type: application/json');
+		echo json_encode(array("status" => TRUE));
+
+	}
+
+	public function actionindikator()
+	{
+		$params = (object)$this->input->post();
+		$data = $this->Model_json->deleteindikator($params);
+		if($data){
+			$path			= FCPATH;
+			unlink($path.'/'.$params->dokumen);
+		}
 		header('Content-Type: application/json');
 		echo json_encode(array("status" => TRUE));
 

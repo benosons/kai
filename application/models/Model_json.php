@@ -177,12 +177,28 @@ class Model_json extends CI_Model {
     public function savedokumen($params = NULL, $id)
     {
         $valid = true;
+
         $table = $params->table;
         unset($params->table);
         $params->create_by = $id;
         $params->create_date = date("Y-m-d H:i:s");
-        $this->db->set($params);
-        $valid = $this->db->insert($table);
+
+        if($params->id){
+          if($params->file_data == 'undefined'){
+            unset($params->file_data);
+            unset($params->dokumen);
+          }
+
+          $this->db->set($params);
+          $this->db->where('id', $params->id);
+          $valid = $this->db->update($table);
+        }else{
+          $this->db->set($params);
+          $valid = $this->db->insert($table);
+        }
+
+
+
 
         return $valid;
 
@@ -233,6 +249,13 @@ class Model_json extends CI_Model {
     {
         $this->db->where('id', $param->id);
         $valid = $this->db->delete('kegiatan');
+        return $valid;
+    }
+
+    public function deleteindikator($param)
+    {
+        $this->db->where('id', $param->id);
+        $valid = $this->db->delete($param->table);
         return $valid;
     }
 

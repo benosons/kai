@@ -5,7 +5,22 @@ $( document ).ready(function() {
 
   $('#tanggal_keluar, #rka_update_tanggal').on('click', function(){
     $('.datepicker-container').css({ 'z-index' : '5000'});
-  })
+  });
+
+  $(".custom-file-input").on("change", function() {
+    var fileName = $(this).val().split("\\").pop();
+    $(this).siblings(".custom-file-label").addClass("selected").html(fileName);
+  });
+
+  $('[data-target="#modaldokumen"]').on('click', function(){
+    $('#id_dokumen').val('');
+    $('#jenis_dokumen').val(0).trigger("change");
+    $('#nama_dokumen').val('');
+    $('#nomor_dokumen').val('');
+    $('#uraian_singkat').val('');
+    $('#tanggal_keluar').val('');
+  });
+
 });
 
 function loadindikator(param){
@@ -87,35 +102,40 @@ function loadindikator(param){
                         { 'mDataProp': 'id'},
                         { 'mDataProp': 'jenis_dokumen'},
                         { 'mDataProp': 'nama_dokumen'},
+                        { 'mDataProp': 'nomor_dokumen'},
                         { 'mDataProp': 'uraian_singkat'},
                         { 'mDataProp': 'tanggal_keluar'},
                         { 'mDataProp': 'dokumen'},
 
                     ],
                     order: [[0, 'ASC']],
-                    // aoColumnDefs:[
-                    //   {
-                    //       mRender: function ( data, type, row ) {
-                    //         var el =
-                    //           `<div class="avatar-icon-wrapper mr-3 avatar-icon-xl btn-hover-shine">
-                    //                                 <div class="avatar-icon rounded">
-                    //                                     <img src="`+data+`" alt="Avatar 5">
-                    //                                 </div>
-                    //                             </div>`;
-                    //           return el;
-                    //       },
-                    //       aTargets: [ 1 ]
-                    //   },
-                    //   {
-                    //       mRender: function ( data, type, row ) {
-                    //         var el =
-                    //           `<button class="mb-2 mr-2 btn btn-xs btn-warning" onclick="action('edit',`+row.id+`,'`+row.dokumen+`')"><i class="fa fa-edit" aria-hidden="true" title="Copy to use edit"></i> Edit</button>
-                    //           <button class="mb-2 mr-2 btn btn-xs btn-danger" onclick="action('hapus',`+row.id+`,'`+row.dokumen+`')"><i class="fa fa-trash" aria-hidden="true" title="Copy to use edit"></i> Hapus</button>`;
-                    //           return el;
-                    //       },
-                    //       aTargets: [ 7 ]
-                    //   },
-                    // ],
+                    aoColumnDefs:[
+                      // {
+                      //     mRender: function ( data, type, row ) {
+                      //       var el =
+                      //         `<div class="avatar-icon-wrapper mr-3 avatar-icon-xl btn-hover-shine">
+                      //                               <div class="avatar-icon rounded">
+                      //                                   <img src="`+data+`" alt="Avatar 5">
+                      //                               </div>
+                      //                           </div>`;
+                      //         return el;
+                      //     },
+                      //     aTargets: [ 1 ]
+                      // },
+                      {
+                          mRender: function ( data, type, row ) {
+                            var el =
+                              `<div role="group" class="btn-group-sm btn-group btn-group-toggle">
+                                                        <a data-toggle="tooltip" title="Download !" type="button" class="btn btn-success" href="`+row.dokumen+`"><i class="fa fa-download"></i></a>
+                                                        <button data-toggle="tooltip" title="Edit !" type="button" class="btn btn-warning" onclick="actiondokumen('edit', '`+row.id+`', '`+row.jenis_dokumen+`', '`+row.nama_dokumen+`', '`+row.uraian_singkat+`', '`+row.tanggal_keluar+`', '`+row.nomor_dokumen+`', '`+row.dokumen+`')"><i class="fa fa-edit"></i></button>
+                                                        <button data-toggle="tooltip" title="Delete !" type="button" class="btn btn-danger" onclick="actiondokumen('delete', '`+row.id+`', '`+row.jenis_dokumen+`', '`+row.nama_dokumen+`', '`+row.uraian_singkat+`', '`+row.tanggal_keluar+`', '`+row.nomor_dokumen+`', '`+row.dokumen+`')"><i class="fa fa-trash-alt"></i></button>
+                                                    </div>`;
+
+                              return el;
+                          },
+                          aTargets: [ 6 ]
+                      },
+                    ],
                     fnRowCallback: function(nRow, aData, iDisplayIndex, iDisplayIndexFull){
                         var index = iDisplayIndexFull + 1;
                         $('td:eq(0)', nRow).html('#'+index);
@@ -260,14 +280,18 @@ function action(param, id, dokumen){
 
 function saveindikator(param){
   var formData = new FormData();
+  var files = $('#customFile')[0].files;
 
   if(param == 'dokumen'){
     formData.append('table', param);
+    formData.append('id', $('#id_dokumen').val());
     formData.append('jenis_dokumen', $('#jenis_dokumen').val());
     formData.append('nama_dokumen', $('#nama_dokumen').val());
     formData.append('uraian_singkat', $('#uraian_singkat').val());
     formData.append('tanggal_keluar', $('#tanggal_keluar').val());
-    formData.append('dokumen', $('#dokumen').val());
+    formData.append('nomor_dokumen', $('#nomor_dokumen').val());
+    formData.append('file_data',files[0]);
+
   }else if(param == 'rka'){
     formData.append('table', param);
     formData.append('rka_tahun', $('#rka_tahun').val());
@@ -307,3 +331,50 @@ function saveindikator(param){
       }
     })
 }
+
+function actiondokumen(param, id, jenis_dokumen,nama_dokumen,uraian_singkat,tanggal_keluar,nomor_dokumen,dokumen){
+  if(param == 'edit'){
+
+    $('[data-target="#modaldokumen"]').trigger('click');
+    $('#id_dokumen').val(id);
+    $('#jenis_dokumen').val(jenis_dokumen).trigger('change');
+    $('#nama_dokumen').val(nama_dokumen);
+    $('#nomor_dokumen').val(nomor_dokumen);
+    $('#uraian_singkat').val(uraian_singkat);
+    $('#tanggal_keluar').val(tanggal_keluar);
+  }else if(param == 'delete'){
+    swal({
+      title: "Anda, Yakin?",
+      text: "Dokumen yang dihapus tidak bisa dikembalikan!",
+      icon: "warning",
+      buttons: true,
+      cancel: "Batal",
+      buttons: "Hapus",
+      dangerMode: true,
+    })
+    .then((willDelete) => {
+      if (willDelete) {
+        var formData = new FormData();
+        formData.append('table', 'dokumen');
+        formData.append('id', id);
+        formData.append('dokumen', dokumen);
+        $.ajax({
+            type: 'post',
+            url:'actionindikator',
+            data: formData,
+            contentType: false,
+            processData: false,
+            success:function(result){
+              swal(
+                "Sukses",
+                "Dokumen telah dihapus !",
+                "success"
+              ).then((value) => {
+                window.location.href = '/dokumen';
+              });
+            }
+          })
+      }
+    });
+  }
+};

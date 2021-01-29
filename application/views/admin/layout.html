@@ -500,10 +500,11 @@
 					        <div class="modal-body">
                         <!-- <h5 class="card-title">Grid Rows</h5> -->
                             <div class="form-row">
+                              <input id="id_dokumen" type="hidden">
                                 <div class="col-md-6">
                                   <div class="position-relative form-group">
                                     <label class="card-title">Jenis Dokumen</label>
-                                    <select id="jenis_dokumen" class="multiselect-dropdown form-control">
+                                    <select id="jenis_dokumen" class="multiselect-dropdowns form-control">
                                       <option value="0">-Pilih-</option>
                                       <option value="Peraturan Dinas">Peraturan Dinas</option>
                                       <option value="SOP">SOP</option>
@@ -513,6 +514,9 @@
                                       <option value="PKS">PKS</option>
                                       <option value="Riset & Inovasi">Riset & Inovasi</option>
                                       <option value="Peraturan Direksi">Peraturan Direksi</option>
+                                      <option value="Peraturan Menteri">Peraturan Menteri</option>
+                                      <option value="Keputusan Menteri">Keputusan Menteri</option>
+                                      <option value="Undang - undang">Undang - Undang</option>
                                       <option value="Lainnya">Lainnya</option>
                                     </select>
                                   </div>
@@ -537,10 +541,19 @@
     														</div>
                                 <div class="col-md-3">
                                   <div class="position-relative form-group">
-                                      <label for="exampleState" class="card-title">Dokumen</label>
-                                      <input id="dokumen" name="state" type="text" class="form-control">
+                                      <label for="exampleState" class="card-title">Nomor Dokumen</label>
+                                      <input id="nomor_dokumen" name="state" type="text" class="form-control">
                                   </div>
                                 </div>
+                                <div class="col-md-12">
+    															<div class="position-relative form-group ">
+    																<label for="exampleState" class="card-title">Upload Dokumen</label>
+    																<div class="custom-file">
+    															    <input type="file" class="custom-file-input" id="customFile">
+    															    <label class="custom-file-label" for="customFile">Pilih file</label>
+    															  </div>
+    															</div>
+    														</div>
                             </div>
 					        </div>
 					        <div class="modal-footer">
