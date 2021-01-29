@@ -21,6 +21,28 @@ $( document ).ready(function() {
     $('#tanggal_keluar').val('');
   });
 
+  $('[data-target="#modalrka"]').on('click', function(){
+    $('#id_rka').val('');
+    $('#rka_tahun').val(0);
+    $('#rka_update_tanggal').val('');
+    $('#rka_program').val('');
+    $('#rka_realisasi').val('');
+    $('#rka_penyerapan').val('');
+  });
+
+  $('#rka_realisasi, #rka_program').on('change', function(){
+    $('#rka_penyerapan').val($('#rka_realisasi').val()/ $('#rka_program').val());
+  });
+
+  var max = new Date().getFullYear();
+  var min = max - 5;
+  var opt = '<option value="0">-Pilih-</option>';
+  for (var i = min; i<=max; i++){
+      opt += '<option value="'+i+'">'+i+'</option>;'
+  }
+
+  $('#rka_tahun').html(opt);
+
 });
 
 function loadindikator(param){
@@ -170,6 +192,20 @@ function loadindikator(param){
 
                     ],
                     order: [[0, 'ASC']],
+                    aoColumnDefs:[
+                      {
+                          mRender: function ( data, type, row ) {
+                            var el =
+                              `<div role="group" class="btn-group-sm btn-group btn-group-toggle">
+                                                        <button data-toggle="tooltip" title="Edit !" type="button" class="btn btn-warning" onclick="actionrka('edit', '`+row.id+`', '`+row.rka_tahun+`', '`+row.rka_update_tanggal+`', '`+row.rka_program+`', '`+row.rka_realisasi+`', '`+row.rka_penyerapan+`')"><i class="fa fa-edit"></i></button>
+                                                        <button data-toggle="tooltip" title="Delete !" type="button" class="btn btn-danger" onclick="actionrka('delete', '`+row.id+`', '`+row.rka_tahun+`', '`+row.rka_update_tanggal+`', '`+row.rka_program+`', '`+row.rka_realisasi+`', '`+row.rka_penyerapan+`')"><i class="fa fa-trash-alt"></i></button>
+                                                    </div>`;
+
+                              return el;
+                          },
+                          aTargets: [ 6 ]
+                      },
+                    ],
                     fnRowCallback: function(nRow, aData, iDisplayIndex, iDisplayIndexFull){
                         var index = iDisplayIndexFull + 1;
                         $('td:eq(0)', nRow).html('#'+index);
@@ -294,6 +330,7 @@ function saveindikator(param){
 
   }else if(param == 'rka'){
     formData.append('table', param);
+    formData.append('id', $('#id_rka').val());
     formData.append('rka_tahun', $('#rka_tahun').val());
     formData.append('rka_update_tanggal', $('#rka_update_tanggal').val());
     formData.append('rka_program', $('#rka_program').val());
@@ -365,12 +402,63 @@ function actiondokumen(param, id, jenis_dokumen,nama_dokumen,uraian_singkat,tang
             contentType: false,
             processData: false,
             success:function(result){
-              swal(
-                "Sukses",
-                "Dokumen telah dihapus !",
-                "success"
-              ).then((value) => {
+              swal({
+                title: "Sukses",
+                text: "Dokumen telah dihapus!",
+                icon: "success",
+                buttons: true,
+                buttons: "Ok",
+              }).then((value) => {
                 window.location.href = '/dokumen';
+              });
+            }
+          })
+      }
+    });
+  }
+};
+
+function actionrka(param, id, rka_tahun,rka_update_tanggal,rka_program,rka_realisasi,rka_penyerapan){
+  if(param == 'edit'){
+
+    $('[data-target="#modalrka"]').trigger('click');
+    $('#id_rka').val(id);
+    $('#rka_tahun').val(rka_tahun);
+    $('#rka_update_tanggal').val(rka_update_tanggal);
+    $('#rka_program').val(rka_program);
+    $('#rka_realisasi').val(rka_realisasi);
+    $('#rka_penyerapan').val(rka_penyerapan);
+  }else if(param == 'delete'){
+    swal({
+      title: "Anda, Yakin?",
+      text: "Data yang dihapus tidak bisa dikembalikan!",
+      icon: "warning",
+      buttons: true,
+      cancel: "Batal",
+      buttons: "Hapus",
+      dangerMode: true,
+    })
+    .then((willDelete) => {
+      if (willDelete) {
+        var formData = new FormData();
+        formData.append('table', 'rka');
+        formData.append('id', id);
+
+        $.ajax({
+            type: 'post',
+            url:'actionindikator',
+            data: formData,
+            contentType: false,
+            processData: false,
+            success:function(result){
+              swal({
+                title: "Sukses",
+                text: "Hapus Data RKA!",
+                icon: "success",
+                buttons: true,
+                buttons: "Ok",
+              }).then((value) => {
+                window.location.href = '/rka';
               });
             }
           })

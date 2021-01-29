@@ -574,11 +574,13 @@
                       </div>
                       <div class="modal-body">
                             <!-- <h5 class="card-title">Grid Rows</h5> -->
+                            <input type="hidden" id="id_rka">
                                 <div class="form-row">
                                     <div class="col-md-6">
                                       <div class="position-relative form-group">
                                         <label class="card-title">Tahun</label>
-                                        <select id="rka_tahun" class="multiselect-dropdown form-control">
+                                        <!-- <select id="rka_tahun" class="multiselect-dropdown form-control"> -->
+                                        <select id="rka_tahun" class="form-control">
                                           <option value="0">-Pilih-</option>
                                           <option value="2017">2017</option>
                                           <option value="2018">2018</option>
@@ -609,13 +611,7 @@
                                     <div class="col-md-6">
                                       <div class="position-relative form-group">
                                           <label for="exampleState" class="card-title">Penyerapan (%)</label>
-                                          <input id="rka_penyerapan" name="state" type="text" class="form-control">
-                                      </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                      <div class="position-relative form-group">
-                                          <label for="exampleState" class="card-title">Penyerapan (%)</label>
-                                          <input id="rka_dokumen" name="state" type="text" class="form-control">
+                                          <input disabled id="rka_penyerapan" name="state" type="text" class="form-control">
                                       </div>
                                     </div>
 

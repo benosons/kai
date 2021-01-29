@@ -211,8 +211,17 @@ class Model_json extends CI_Model {
         unset($params->table);
         $params->create_by = $id;
         $params->create_date = date("Y-m-d H:i:s");
-        $this->db->set($params);
-        $valid = $this->db->insert($table);
+        
+        if($params->id){
+
+          $this->db->set($params);
+          $this->db->where('id', $params->id);
+          $valid = $this->db->update($table);
+        }else{
+
+          $this->db->set($params);
+          $valid = $this->db->insert($table);
+        }
 
         return $valid;
 
