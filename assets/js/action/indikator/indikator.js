@@ -1,5 +1,5 @@
 $( document ).ready(function() {
-  const baseU = $('#baseURL').val();
+  window.baseU = $('#baseURL').val();
   const page = $('#page').val();
   $('#menu-'+page+'-list').addClass('mm-active');
   loadindikator(page);
@@ -149,7 +149,7 @@ function loadindikator(param){
                           mRender: function ( data, type, row ) {
                             var el =
                               `<div role="group" class="btn-group-sm btn-group btn-group-toggle">
-                                                        <a data-toggle="tooltip" title="Download !" type="button" class="btn btn-success" href="`+baseU+row.dokumen+`"><i class="fa fa-download"></i></a>
+                                                        <a data-toggle="tooltip" title="Download !" type="button" class="btn btn-success" href="`+window.baseU+row.dokumen+`"><i class="fa fa-download"></i></a>
                                                         <button data-toggle="tooltip" title="Edit !" type="button" class="btn btn-warning" onclick="actiondokumen('edit', '`+row.id+`', '`+row.jenis_dokumen+`', '`+row.nama_dokumen+`', '`+row.uraian_singkat+`', '`+row.tanggal_keluar+`', '`+row.nomor_dokumen+`', '`+row.dokumen+`')"><i class="fa fa-edit"></i></button>
                                                         <button data-toggle="tooltip" title="Delete !" type="button" class="btn btn-danger" onclick="actiondokumen('delete', '`+row.id+`', '`+row.jenis_dokumen+`', '`+row.nama_dokumen+`', '`+row.uraian_singkat+`', '`+row.tanggal_keluar+`', '`+row.nomor_dokumen+`', '`+row.dokumen+`')"><i class="fa fa-trash-alt"></i></button>
                                                     </div>`;
@@ -309,7 +309,7 @@ function action(param, id, dokumen){
             param.charAt(0).toUpperCase() + param.slice(1)+" Kegiatan!",
             "success"
           ).then((value) => {
-            window.location.href = baseU+'kegiatan';
+            window.location.href = window.baseU+'kegiatan';
           });
         }
       })
@@ -364,7 +364,7 @@ function saveindikator(param){
           "Tambah Indikator "+param.toUpperCase()+"!",
           "success"
         ).then((value) => {
-          window.location.href = baseU+param;
+          window.location.href = window.baseU+param;
         });
       }
     })
@@ -410,7 +410,7 @@ function actiondokumen(param, id, jenis_dokumen,nama_dokumen,uraian_singkat,tang
                 buttons: true,
                 buttons: "Ok",
               }).then((value) => {
-                window.location.href = baseU+'dokumen';
+                window.location.href = window.baseU+'dokumen';
               });
             }
           })
@@ -459,7 +459,7 @@ function actionrka(param, id, rka_tahun,rka_update_tanggal,rka_program,rka_reali
                 buttons: true,
                 buttons: "Ok",
               }).then((value) => {
-                window.location.href = baseU+'rka';
+                window.location.href = window.baseU+'rka';
               });
             }
           })
