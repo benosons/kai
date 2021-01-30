@@ -535,4 +535,14 @@ class Json extends CI_Controller {
 
 	}
 
+	public function getDash()
+	{
+
+		$params = (object)$this->input->post();
+
+		$data = $this->Model_json->getDash($params);
+		header('Content-Type: application/json');
+		echo json_encode($data);
+	}
+
 }

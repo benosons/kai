@@ -211,7 +211,7 @@ class Model_json extends CI_Model {
         unset($params->table);
         $params->create_by = $id;
         $params->create_date = date("Y-m-d H:i:s");
-        
+
         if($params->id){
 
           $this->db->set($params);
@@ -446,6 +446,13 @@ class Model_json extends CI_Model {
 
         return $valid;
 
+    }
+
+    public function getDash($params = null)
+    {
+        $query    = $this->db->query("select * from dash_$params->param order by id asc")->result();
+
+        return $query;
     }
 
 }
