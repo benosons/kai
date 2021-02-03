@@ -44,6 +44,15 @@ $( document ).ready(function() {
 
   $('#rka_tahun').html(opt);
 
+  $('#filter-dokumen').on("change", function(){
+    var table = $('#list-dokumen').DataTable();
+    if(this.value != 0){
+      table.columns(1).search( this.value ).draw();
+    }else{
+      loadindikator(page);
+    }
+  });
+
 });
 
 function loadindikator(param){
@@ -119,6 +128,7 @@ function loadindikator(param){
           }else if(param == 'dokumen'){
             $('#list-dokumen').DataTable({
                     aaData: result,
+                    bDestroy: true,
                     lengthChange: false,
                     pageLength: 10,
                     aoColumns: [
@@ -128,6 +138,7 @@ function loadindikator(param){
                         { 'mDataProp': 'nomor_dokumen'},
                         { 'mDataProp': 'uraian_singkat'},
                         { 'mDataProp': 'tanggal_keluar'},
+                        { 'mDataProp': 'dokumen', 'class': 'text-center'},
                         { 'mDataProp': 'dokumen'},
 
                     ],
@@ -150,13 +161,23 @@ function loadindikator(param){
                             var el =
                               `<div role="group" class="btn-group-sm btn-group btn-group-toggle">
                                                         <a data-toggle="tooltip" title="Download !" type="button" class="btn btn-success" href="`+window.baseU+row.dokumen+`"><i class="fa fa-download"></i></a>
+                                                    </div>`;
+
+                              return el;
+                          },
+                          aTargets: [ 6 ]
+                      },
+                      {
+                          mRender: function ( data, type, row ) {
+                            var el =
+                              `<div role="group" class="btn-group-sm btn-group btn-group-toggle">
                                                         <button data-toggle="tooltip" title="Edit !" type="button" class="btn btn-warning" onclick="actiondokumen('edit', '`+row.id+`', '`+row.jenis_dokumen+`', '`+row.nama_dokumen+`', '`+row.uraian_singkat+`', '`+row.tanggal_keluar+`', '`+row.nomor_dokumen+`', '`+row.dokumen+`')"><i class="fa fa-edit"></i></button>
                                                         <button data-toggle="tooltip" title="Delete !" type="button" class="btn btn-danger" onclick="actiondokumen('delete', '`+row.id+`', '`+row.jenis_dokumen+`', '`+row.nama_dokumen+`', '`+row.uraian_singkat+`', '`+row.tanggal_keluar+`', '`+row.nomor_dokumen+`', '`+row.dokumen+`')"><i class="fa fa-trash-alt"></i></button>
                                                     </div>`;
 
                               return el;
                           },
-                          aTargets: [ 6 ]
+                          aTargets: [ 7 ]
                       },
                     ],
                     fnRowCallback: function(nRow, aData, iDisplayIndex, iDisplayIndexFull){
@@ -174,6 +195,13 @@ function loadindikator(param){
                         this.$('tr').click( function () {
                             tr = this;
                         });
+
+                        let col_2 = this.api().columns(1).data()[0];
+                        let opt = '<option value="0">-Pilih-</option>';
+                        for (var i = 0; i < col_2.length; i++) {
+                          opt += '<option value="'+col_2[i]+'">'+col_2[i]+'</option>';
+                        }
+                        $('#filter-dokumen').html(opt);
 
                     }
                 });
