@@ -455,4 +455,21 @@ class Model_json extends CI_Model {
         return $query;
     }
 
+    public function updatekalibrasi($params = NULL)
+    {
+        $valid = true;
+        $id = $params['id'];
+        $this->db->set("update_by", $this->session->userdata('username'));
+        $this->db->set("update_date", date("Y-m-d H:i:s"));
+        $this->db->set($params);
+
+        unset($params['id']);
+        // print_r($id);die;
+        $this->db->where('id', $id);
+        $valid = $this->db->update('dash_kalibrasi');
+
+        return $valid;
+
+    }
+
 }

@@ -292,4 +292,11 @@ public function verifikasi()
 	}
 }
 
+public function kalibrasi()
+{
+		$this->content['js'] = '/assets/js/action/data/kalibrasi.js';
+		$this->twig->display('admin/data/kalibrasi.html', $this->content);
+}
+
+
 }

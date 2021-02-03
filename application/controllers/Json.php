@@ -545,4 +545,14 @@ class Json extends CI_Controller {
 		echo json_encode($data);
 	}
 
+	public function actionkalibrasi()
+	{
+		$params = (object)$this->input->post();
+		$data = $this->Model_json->updatekalibrasi($params->param);
+
+		header('Content-Type: application/json');
+		echo json_encode(array("status" => TRUE));
+
+	}
+
 }

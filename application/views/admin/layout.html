@@ -625,6 +625,64 @@
                   </div>
               </div>
             </div>
+    <div class="modal fade" id="modalkalibrasi" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal-dialog modal-lg" role="document">
+                  <div class="modal-content">
+                      <div class="modal-header">
+                          <h5 class="modal-title" id="exampleModalLabel">Update Data Kalibrasi : <b id="nama_kalib">KANTOR PUSAT</b></h5>
+                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                              <span aria-hidden="true">&times;</span>
+                          </button>
+                      </div>
+                      <div class="modal-body">
+                            <!-- <h5 class="card-title">Grid Rows</h5> -->
+                            <input type="hidden" id="id_kalib">
+                                <div class="form-row">
+                                    <div class="col-md-4">
+                                      <div class="position-relative form-group">
+                                          <label for="exampleState" class="card-title">TRACKGAUGE</label>
+                                          <input id="trackgauge_kalib" type="text" class="form-control" data-toggle="datepicker"/>
+                                      </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                      <div class="position-relative form-group">
+                                          <label for="exampleState" class="card-title">BACK TO BACK</label>
+                                          <input id="btb_kalib" name="state" type="text" class="form-control">
+                                      </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                      <div class="position-relative form-group">
+                                          <label for="exampleState" class="card-title">VERNIER CALIPPER</label>
+                                          <input id="vernier_calipper_kalib" name="state" type="text" class="form-control">
+                                      </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                      <div class="position-relative form-group">
+                                          <label for="exampleState" class="card-title">DITERIMA</label>
+                                          <input id="diterima_kalib" name="state" type="text" class="form-control">
+                                      </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                      <div class="position-relative form-group">
+                                          <label for="exampleState" class="card-title">DITOLAK</label>
+                                          <input id="ditolak_kalib" name="state" type="text" class="form-control">
+                                      </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                      <div class="position-relative form-group">
+                                          <label for="exampleState" class="card-title">TOTAL</label>
+                                          <input id="total_kalib" name="state" type="text" class="form-control">
+                                      </div>
+                                    </div>
+                                </div>
+                      </div>
+                      <div class="modal-footer">
+                          <button type="button" class="btn btn-secondary" data-dismiss="modal">close</button>
+                          <button type="button" class="btn btn-primary" onclick="savekalib()">Save</button>
+                      </div>
+                  </div>
+              </div>
+            </div>
     <!--  -->
     <div class="app-drawer-wrapper">
         <div class="drawer-nav-btn">
