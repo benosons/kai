@@ -87,16 +87,17 @@ class Model_json extends CI_Model {
 
     public function savekegiatan($params = NULL)
     {
-        $valid = true;
+        // $valid = true;
         $convertDate = date("Y-m-d", strtotime($params->tanggal));
 
         $this->db->set($params);
         $this->db->set("tanggal", $convertDate);
         $this->db->set("create_date", date("Y-m-d H:i:s"));
         $this->db->set("create_by", $this->session->userdata('username'));
-        $valid = $this->db->insert('kegiatan');
+        $this->db->insert('kegiatan');
+        $insert_id = $this->db->insert_id();
 
-        return $valid;
+        return $insert_id;
 
     }
 
@@ -303,7 +304,7 @@ class Model_json extends CI_Model {
         $nama = $this->session->userdata('id');
         $kategori = $this->session->userdata('kategori');
         $id = $this->db->escape_str($nama);
-        $query = $this->db->query("select * from kegiatan order by id desc")->result();
+        $query = $this->db->query("select *, (select param_name from param_indikator where param_id = kegiatan.indikator_ssd and param_type = 'ssd') as indikator_ssd_name, (select param_name from param_indikator where param_id = kegiatan.indikator_manager and param_type = 'manager') as indikator_manager_name from kegiatan order by id desc")->result();
 
         return $query;
     }
@@ -470,6 +471,26 @@ class Model_json extends CI_Model {
 
         return $valid;
 
+    }
+
+    public function insertUpload($params = NULL)
+    {
+        // $valid = true;
+
+        $this->db->set($params);
+        $this->db->set("create_date", date("Y-m-d H:i:s"));
+        $this->db->insert('file_attachment');
+        $insert_id = $this->db->insert_id();
+
+        return $insert_id;
+
+    }
+
+    public function loadfile($id)
+    {
+        $query    = $this->db->query("select * from file_attachment where id_master = '$id'")->result();
+
+        return $query;
     }
 
 }

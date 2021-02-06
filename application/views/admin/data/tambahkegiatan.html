@@ -98,7 +98,7 @@
 																</select>
 															</div>
 														</div>
-														<div class="col-md-6">
+														<div hidden class="col-md-6">
 															<div class="position-relative form-group">
 																<label class="card-title">Uraian Indikator</label>
 																<select id="uraian_indikator" class="multiselect-dropdown form-control">
@@ -132,10 +132,19 @@
 														</div>
 														<div class="col-md-6">
 															<div class="position-relative form-group ">
-																<label for="exampleState" class="card-title">Dokumentasi</label>
+																<label for="exampleState" class="card-title">Foto Kegiatan</label>
 																<div class="custom-file">
-															    <input type="file" class="custom-file-input" id="customFile">
+															    <input type="file" class="custom-file-input" id="customFile" accept="image/*" multiple>
 															    <label class="custom-file-label" for="customFile">Pilih file</label>
+															  </div>
+															</div>
+														</div>
+														<div class="col-md-6">
+															<div class="position-relative form-group ">
+																<label for="exampleState" class="card-title">Dokumen pendukung</label>
+																<div class="custom-file">
+															    <input type="file" class="custom-file-input" id="customFile-1" accept=".pdf, .xlsx, .xls, .doc, .docx" multiple>
+															    <label class="custom-file-label" for="customFile-1">Pilih file</label>
 															  </div>
 															</div>
 														</div>

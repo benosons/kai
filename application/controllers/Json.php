@@ -52,19 +52,63 @@ class Json extends CI_Controller {
 	public function submitkegiatan()
 	{
 		$params = (object)$this->input->post();
-		$name = strtolower(str_replace(' ', '_', $_FILES['file_data']['name']));
+		$img = $_FILES['img'];
+		$doc = $_FILES['doc'];
+		$countimg = count($img['name']);
+		$countdoc = count($doc['name']);
+
+		$id = $this->Model_json->savekegiatan($params);
+
+		// $name = strtolower(str_replace(' ', '_', $_FILES['file_data']['name']));
 		$path			= FCPATH;
 		$bag			= 'assets/dokumen/kegiatan';
 		$date 		= date('Y/m/d');
 		$folder		= $path.'/'.$bag.'/'.$date.'/';
+
 		if (!is_dir($folder)) {
 		    mkdir($folder, 0777, TRUE);
 		}
-		$tmp_file = $_FILES['file_data']['tmp_name'];
-		move_uploaded_file($tmp_file, $folder.$name);
-		$params->dokumen = '/'.$bag.'/'.$date.'/'.$name;
 
-		$data = $this->Model_json->savekegiatan($params);
+		//img
+		for ($i=0; $i < $countimg ; $i++) {
+			$name = $img['name'][$i];
+			$ext = strtolower(pathinfo($name, PATHINFO_EXTENSION));
+
+			$filename = strtolower(str_replace(' ', '_', $name));
+			$tmp_file = $img['tmp_name'][$i];
+			move_uploaded_file($tmp_file, $folder.$filename);
+
+			$file->name = $name;
+			$file->type = $img['type'][$i];
+			$file->tmp_name = $tmp_file;
+			$file->size = $img['size'][$i];
+			$file->path = '/'.$bag.'/'.$date.'/'.$filename;
+			$file->id_master = $id;
+			$file->param_val1 = 'images';
+
+			$valid = $this->Model_json->insertUpload($file);
+		}
+
+		// Doc
+		for ($i=0; $i < $countdoc ; $i++) {
+			$name = $doc['name'][$i];
+			$ext = strtolower(pathinfo($name, PATHINFO_EXTENSION));
+
+			$filename = strtolower(str_replace(' ', '_', $name));
+			$tmp_file = $doc['tmp_name'][$i];
+			move_uploaded_file($tmp_file, $folder.$filename);
+
+			$file->name = $name;
+			$file->type = $doc['type'][$i];
+			$file->tmp_name = $tmp_file;
+			$file->size = $doc['size'][$i];
+			$file->path = '/'.$bag.'/'.$date.'/'.$filename;
+			$file->id_master = $id;
+			$file->param_val1 = 'document';
+
+			$valid = $this->Model_json->insertUpload($file);
+		}
+
 		header('Content-Type: application/json');
 		echo json_encode(array("status" => TRUE));
 
@@ -97,6 +141,11 @@ class Json extends CI_Controller {
 			$params = $_REQUEST;
 			$postData = $this->input->post('param');
 			$query = $this->Model_json->loadkegiatan($this->id);
+			foreach ($query as $key => $value) {
+				$attc = $this->Model_json->loadfile($value->id);
+				$query[$key]->files = $attc;
+
+			}
 			$data = $query;
 
 			header('Content-Type: application/json');

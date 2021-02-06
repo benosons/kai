@@ -1,6 +1,11 @@
 $( document ).ready(function() {
+  window.baseU = $('#baseURL').val();
   $('#menu-kegiatan-list').addClass('mm-active');
   loadkegiatan('');
+
+});
+$('#file-doc').on('change', function(){
+  $('#donlot-dong').attr('href', window.baseU+this.value);
 });
 
 function loadkegiatan(param){
@@ -19,12 +24,12 @@ function loadkegiatan(param){
                     pageLength: 10,
                     aoColumns: [
                         { 'mDataProp': 'id'},
-                        { 'mDataProp': 'dokumen', 'sClass':'text-center'},
+                        { 'mDataProp': 'id', 'sClass':'text-center'},
                         { 'mDataProp': 'indikator_ssd_name'},
                         { 'mDataProp': 'indikator_manager_name'},
-                        { 'mDataProp': 'indikator_uraian_name'},
                         { 'mDataProp': 'kegiatan'},
-                        { 'mDataProp': 'tanggal'},
+                        { 'mDataProp': 'create_date'},
+                        { 'mDataProp': 'tanggal', sClass: 'text-center'},
                         { 'mDataProp': 'tanggal'},
 
                     ],
@@ -32,10 +37,14 @@ function loadkegiatan(param){
                     aoColumnDefs:[
                       {
                           mRender: function ( data, type, row ) {
+                            let srcc = '';
+                            if(row.files[0].param_val1 == 'images'){
+                              srcc = row.files[0].path;
+                            }
                             var el =
                               `<div class="avatar-icon-wrapper mr-3 avatar-icon-xl btn-hover-shine">
                                                     <div class="avatar-icon rounded">
-                                                        <img src="`+data+`" alt="Avatar 5">
+                                                        <img src="`+srcc+`" alt="Avatar 5">
                                                     </div>
                                                 </div>`;
                               return el;
@@ -44,9 +53,31 @@ function loadkegiatan(param){
                       },
                       {
                           mRender: function ( data, type, row ) {
-                            var el =
-                              `<button class="mb-2 mr-2 btn btn-xs btn-warning" onclick="action('edit',`+row.id+`,'`+row.dokumen+`')"><i class="fa fa-edit" aria-hidden="true" title="Copy to use edit"></i> Edit</button>
-                              <button class="mb-2 mr-2 btn btn-xs btn-danger" onclick="action('hapus',`+row.id+`,'`+row.dokumen+`')"><i class="fa fa-trash" aria-hidden="true" title="Copy to use edit"></i> Hapus</button>`;
+                            for (var i = 0; i < row.files.length; i++) {
+                              delete row.files[i].tmp_name;
+                            }
+                            let fil = JSON.stringify(row.files);
+
+                            let fil1 = fil.replace('[{', '<');
+                            let fil2 = fil1.replace('}]', '>');
+                            let fil3 = fil2.replace(/"/g, "=");
+                            let fil4 = fil3.replace(/,/g, "~");
+
+                            var el = `<div role="group" class="btn-group-sm btn-group btn-group-toggle">
+                                        <button type="button" class="btn btn-success" onclick="showmodal('`+fil4+`')"><i class="fa fa-download" aria-hidden="true" title="Copy to use edit"></i></button>
+                                    </div>`;
+
+                              return el;
+                          },
+                          aTargets: [ 6 ]
+                      },
+                      {
+                          mRender: function ( data, type, row ) {
+                            var el = `<div role="group" class="btn-group-sm btn-group btn-group-toggle">
+                                <button type="button" class="btn btn-warning" onclick="action('edit',`+row.id+`,'`+row.dokumen+`')"><i class="fa fa-edit" aria-hidden="true" title="Copy to use edit"></i></button>
+                                <button type="button" class="btn btn-danger" onclick="action('hapus',`+row.id+`,'`+row.dokumen+`')"><i class="fa fa-trash" aria-hidden="true" title="Copy to use edit"></i></button>
+                            </div>`;
+
                               return el;
                           },
                           aTargets: [ 7 ]
@@ -97,4 +128,25 @@ function action(param, id, dokumen){
           });
         }
       })
+    }
+
+    function showmodal(iObj){
+
+      let fil = iObj;
+      let fil1 = fil.replace('<', '[{');
+      let fil2 = fil1.replace('>', '}]');
+      let fil3 = fil2.replace(/=/g, '"');
+      let fil4 = fil3.replace(/~/g, ",");
+      let file = JSON.parse(fil4);
+      console.log(file);
+
+      let opt = '<option value="0">-Pilih-</option>';
+      for (var i = 0; i < file.length; i++) {
+        if(file[i].param_val1 == 'document'){
+          opt += '<option value="'+file[i].path+'">'+file[i].name+'</option>';
+        }
+      }
+
+      $('#file-doc').html(opt);
+      $('[data-target="#modaldonlotdoc"]').trigger('click');
     }
