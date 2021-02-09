@@ -3,6 +3,12 @@ $( document ).ready(function() {
   const page = $('#page').val();
   $('#menu-'+page+'-list').addClass('mm-active');
   loadindikator(page);
+  let thn = generateArrayOfYears();
+  let opti = '<option value="0">-Pilih-</option>';
+  for (var i = 0; i < thn.length; i++) {
+    opti += '<option value="'+thn[i]+'">'+thn[i]+'</option>';
+  }
+  $('#'+page+'_tahun').html(opti);
 
   $('#tanggal_keluar, #rka_update_tanggal').on('click', function(){
     $('.datepicker-container').css({ 'z-index' : '5000'});
@@ -53,6 +59,15 @@ $( document ).ready(function() {
     }
   });
 
+  $('#filter-'+page).on("change", function(){
+    var table = $('#list-'+page).DataTable();
+    if(this.value != 0){
+      table.columns(10).search( this.value ).draw();
+    }else{
+      loadindikator(page);
+    }
+  });
+
 });
 
 function loadindikator(param){
@@ -68,6 +83,7 @@ function loadindikator(param){
           if(param == 'ssd'){
             $('#list-'+param).DataTable({
                     aaData: result,
+                    bDestroy: true,
                     lengthChange: false,
                     pageLength: 10,
                     aoColumns: [
@@ -81,10 +97,12 @@ function loadindikator(param){
                         { 'mDataProp': 'pencapaian_1'},
                         { 'mDataProp': 'pencapaian_2'},
                         { 'mDataProp': 'realisasi'},
+                        { 'mDataProp': 'tahun'},
+                        { 'mDataProp': 'realisasi'},
 
                     ],
                     order: [[0, 'ASC']],
-                    // aoColumnDefs:[
+                    aoColumnDefs:[
                     //   {
                     //       mRender: function ( data, type, row ) {
                     //         var el =
@@ -97,16 +115,19 @@ function loadindikator(param){
                     //       },
                     //       aTargets: [ 1 ]
                     //   },
-                    //   {
-                    //       mRender: function ( data, type, row ) {
-                    //         var el =
-                    //           `<button class="mb-2 mr-2 btn btn-xs btn-warning" onclick="action('edit',`+row.id+`,'`+row.dokumen+`')"><i class="fa fa-edit" aria-hidden="true" title="Copy to use edit"></i> Edit</button>
-                    //           <button class="mb-2 mr-2 btn btn-xs btn-danger" onclick="action('hapus',`+row.id+`,'`+row.dokumen+`')"><i class="fa fa-trash" aria-hidden="true" title="Copy to use edit"></i> Hapus</button>`;
-                    //           return el;
-                    //       },
-                    //       aTargets: [ 7 ]
-                    //   },
-                    // ],
+                      {
+                          mRender: function ( data, type, row ) {
+                            var el =
+                              `<div role="group" class="btn-group-sm btn-group btn-group-toggle">
+                                                        <button data-toggle="tooltip" title="Edit !" type="button" class="btn btn-warning" onclick="actionindikator('edit', '`+page+`', '`+row.id+`', '`+row.indikator_type+`', '`+row.indikator_1+`', '`+row.indikator_2+`', '`+row.keterangan+`', '`+row.satuan+`', '`+row.formula+`', '`+row.prioritas+`', '`+row.tahun+`')"><i class="fa fa-edit"></i></button>
+                                                        <button data-toggle="tooltip" title="Delete !" type="button" class="btn btn-danger" onclick="actionindikator('delete', '`+page+`', '`+row.id+`')"><i class="fa fa-trash-alt"></i></button>
+                                                    </div>`;
+
+                              return el;
+                          },
+                          aTargets: [ 11 ]
+                      },
+                    ],
                     fnRowCallback: function(nRow, aData, iDisplayIndex, iDisplayIndexFull){
                         var index = iDisplayIndexFull + 1;
                         $('td:eq(0)', nRow).html('#'+index);
@@ -122,6 +143,15 @@ function loadindikator(param){
                         this.$('tr').click( function () {
                             tr = this;
                         });
+
+                        let col_2 = this.api().columns(1).data()[0];
+                        let rowing = this.api().rows().data();
+
+                        let opt = '<option value="0">-Pilih-</option>';
+                        for (var i = 0; i < rowing.length; i++) {
+                          opt += '<option value="'+rowing[i].tahun+'">'+rowing[i].tahun+'</option>';
+                        }
+                        $('#filter-'+param).html(opt);
 
                     }
                 });
@@ -367,6 +397,8 @@ function saveindikator(param){
     formData.append('rka_penyerapan', $('#rka_penyerapan').val());
     formData.append('rka_dokumen', $('#rka_dokumen').val());
   }else{
+    formData.append('id', $('#id_'+page.value).val());
+    formData.append('tahun', $('#'+param+'_tahun').val());
     formData.append('indikator_type', param);
     formData.append('indikator_1', $('#'+param+'_indikator_1').val());
     formData.append('indikator_2', $('#'+param+'_indikator_2').val());
@@ -374,10 +406,10 @@ function saveindikator(param){
     formData.append('satuan', $('#'+param+'_satuan').val());
     formData.append('formula', $('#'+param+'_formula').val());
     formData.append('prioritas', $('#'+param+'_prioritas').val());
-    formData.append('target', $('#'+param+'_target').val());
-    formData.append('pencapaian_1', $('#'+param+'_pencapaian_1').val());
-    formData.append('pencapaian_2', $('#'+param+'_pencapaian_2').val());
-    formData.append('realisasi', $('#'+param+'_realisasi').val());
+    // formData.append('target', $('#'+param+'_target').val());
+    // formData.append('pencapaian_1', $('#'+param+'_pencapaian_1').val());
+    // formData.append('pencapaian_2', $('#'+param+'_pencapaian_2').val());
+    // formData.append('realisasi', $('#'+param+'_realisasi').val());
   }
 
   $.ajax({
@@ -495,3 +527,65 @@ function actionrka(param, id, rka_tahun,rka_update_tanggal,rka_program,rka_reali
     });
   }
 };
+
+function actionindikator(param, pageing, id, indikator_type, indikator_1, indikator_2, keterangan, satuan, formula, prioritas, tahun){
+  if(param == 'edit'){
+
+    $('[data-target="#modalssd"]').trigger('click');
+
+    $('#id_'+page.value).val(id);
+    $('#'+page.value+'_tahun').val(tahun);
+    $('#'+page.value+'_indikator_1').val(indikator_1);
+    $('#'+page.value+'_keterangan').val(keterangan);
+    $('#'+page.value+'_satuan').val(satuan);
+    $('#'+page.value+'_formula').val(formula);
+    $('#'+page.value+'_prioritas').val(prioritas);
+  }else if(param == 'delete'){
+    swal({
+      title: "Anda, Yakin?",
+      text: "Data yang dihapus tidak bisa dikembalikan!",
+      icon: "warning",
+      buttons: true,
+      cancel: "Batal",
+      buttons: "Hapus",
+      dangerMode: true,
+    })
+    .then((willDelete) => {
+      if (willDelete) {
+        var formData = new FormData();
+        formData.append('table', 'indikator');
+        formData.append('id', id);
+
+        $.ajax({
+            type: 'post',
+            url:'actionindikator',
+            data: formData,
+            contentType: false,
+            processData: false,
+            success:function(result){
+              swal({
+                title: "Sukses",
+                text: "Hapus Data "+page.value+"!",
+                icon: "success",
+                buttons: true,
+                buttons: "Ok",
+              }).then((value) => {
+                window.location.href = window.baseU+page.value;
+              });
+            }
+          })
+      }
+    });
+  }
+};
+
+function generateArrayOfYears() {
+  var max = new Date().getFullYear()
+  var min = max - 10
+  var years = []
+
+  for (var i = max; i >= min; i--) {
+    years.push(i)
+  }
+  return years
+}

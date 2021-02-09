@@ -597,7 +597,16 @@ class Json extends CI_Controller {
 	public function actionkalibrasi()
 	{
 		$params = (object)$this->input->post();
-		$data = $this->Model_json->updatekalibrasi($params->param);
+
+		if($params->param['pemilik']){
+			$data = $this->Model_json->savekalibrasi($params->param);
+		}else if($params->param['mode'] == 'delete'){
+			
+			$data = $this->Model_json->deletekalibrasi($params->param);
+		}else{
+			$data = $this->Model_json->updatekalibrasi($params->param);
+		}
+
 
 		header('Content-Type: application/json');
 		echo json_encode(array("status" => TRUE));

@@ -168,8 +168,16 @@ class Model_json extends CI_Model {
         $params->create_by = $id;
         $params->create_date = date("Y-m-d H:i:s");
 
-        $this->db->set($params);
-        $valid = $this->db->insert('indikator');
+        if($params->id){
+
+          $this->db->set($params);
+          $this->db->where('id', $params->id);
+          $valid = $this->db->update('indikator');
+        }else{
+
+          $this->db->set($params);
+          $valid = $this->db->insert('indikator');
+        }
 
         return $valid;
 
@@ -491,6 +499,33 @@ class Model_json extends CI_Model {
         $query    = $this->db->query("select * from file_attachment where id_master = '$id'")->result();
 
         return $query;
+    }
+
+    public function savekalibrasi($params = NULL)
+    {
+        $valid = true;
+
+        $this->db->set("update_by", $this->session->userdata('username'));
+        $this->db->set("update_date", date("Y-m-d H:i:s"));
+        $this->db->set("nama_pemilik_alat_ukur", $params['pemilik']);
+        $this->db->set("trackgauge", 0);
+        $this->db->set("back_to_back", 0);
+        $this->db->set("vernier_calipper", 0);
+        $this->db->set("diterima", 0);
+        $this->db->set("ditolak", 0);
+        $this->db->set("total", 0);
+
+        $valid = $this->db->insert('dash_kalibrasi');
+
+        return $valid;
+
+    }
+
+    public function deletekalibrasi($param = null)
+    {
+        $this->db->where('id', $param['id']);
+        $valid = $this->db->delete('dash_kalibrasi');
+        return $valid;
     }
 
 }

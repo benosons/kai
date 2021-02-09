@@ -2,7 +2,9 @@ $( document ).ready(function() {
   window.baseU = $('#baseURL').val();
   $('#menu-kalibrasi').addClass('mm-active');
   getkalibrasi('kalibrasi');
-
+  $('#save-pemilik').on('click', function(){
+      savekalib('insert');
+  });
 });
 
 function getkalibrasi(param){
@@ -18,7 +20,7 @@ function getkalibrasi(param){
         var dt = $('#list-kalibrasi').DataTable({
                     aaData: result,
                     lengthChange: false,
-                    pageLength: 35,
+                    pageLength: 20,
                     aoColumns: [
                         { 'mDataProp': 'id'},
                         { 'mDataProp': 'nama_pemilik_alat_ukur', 'sClass':'text-center'},
@@ -28,19 +30,19 @@ function getkalibrasi(param){
                         { 'mDataProp': 'diterima'},
                         { 'mDataProp': 'ditolak'},
                         { 'mDataProp': 'total'},
+                        { 'mDataProp': 'total', 'sClass':'text-center'},
 
                     ],
                     // order: [0, 'DESC'],
                     aoColumnDefs:[
-                      // {
-                      //     mRender: function ( data, type, row ) {
-                      //       var el =
-                      //         `<button class="mb-2 mr-2 btn btn-xs btn-warning" onclick="action('edit',`+row.id+`,'`+row.dokumen+`')"><i class="fa fa-edit" aria-hidden="true" title="Copy to use edit"></i> Edit</button>
-                      //         <button class="mb-2 mr-2 btn btn-xs btn-danger" onclick="action('hapus',`+row.id+`,'`+row.dokumen+`')"><i class="fa fa-trash" aria-hidden="true" title="Copy to use edit"></i> Hapus</button>`;
-                      //         return el;
-                      //     },
-                      //     aTargets: [ 7 ]
-                      // },
+                      {
+                          mRender: function ( data, type, row ) {
+                            var el =
+                              `<button class="mb-2 mr-2 btn btn-xs btn-danger" onclick="savekalib('delete',`+row.id+`)"><i class="fa fa-trash" aria-hidden="true" title="Copy to use edit"></i></button>`;
+                              return el;
+                          },
+                          aTargets: [ 8 ]
+                      },
                     ],
                     fnRowCallback: function(nRow, aData, iDisplayIndex, iDisplayIndexFull){
                         var index = iDisplayIndexFull + 1;
@@ -62,7 +64,7 @@ function getkalibrasi(param){
                     }
                 });
 
-                $('#list-kalibrasi  tbody').on('click', 'tr', function () {
+                $('#list-kalibrasi tbody').on('click', 'tr td:not(:last-child)', function () {
                   var data = dt.row( this ).data();
                   $('#modal-kalib').trigger('click');
                   $('#nama_kalib').text(data.nama_pemilik_alat_ukur);
@@ -81,16 +83,24 @@ function getkalibrasi(param){
       })
     }
 
-function savekalib(){
+function savekalib(param, id){
 
   let isObject                    = {};
-  isObject.id                     = $('#id_kalib').val();
-  isObject.trackgauge             = $('#trackgauge_kalib').val();
-  isObject.back_to_back           = $('#btb_kalib').val();
-  isObject.vernier_calipper       = $('#vernier_calipper_kalib').val();
-  isObject.diterima               = $('#diterima_kalib').val();
-  isObject.ditolak                = $('#ditolak_kalib').val();
-  isObject.total                  = $('#total_kalib').val();
+  if(param == 'insert'){
+    isObject.pemilik                = $('#kalib_pemilik').val();
+  }else if(param == 'delete'){
+
+    isObject.id = id;
+    isObject.mode = param;
+  }else{
+    isObject.id                     = $('#id_kalib').val();
+    isObject.trackgauge             = $('#trackgauge_kalib').val();
+    isObject.back_to_back           = $('#btb_kalib').val();
+    isObject.vernier_calipper       = $('#vernier_calipper_kalib').val();
+    isObject.diterima               = $('#diterima_kalib').val();
+    isObject.ditolak                = $('#ditolak_kalib').val();
+    isObject.total                  = $('#total_kalib').val();
+  }
 
   $.ajax({
     type: 'POST',
@@ -100,13 +110,24 @@ function savekalib(){
       param	    : isObject,
     },
     success: function(response){
-      swal(
-        "Sukses!",
-        "Update "+$('#nama_kalib').text()+" !",
-        "success"
-      ).then((value) => {
-        window.location.href = window.baseU+'kalibrasi';
-      });
+      if(param == 'delete'){
+        swal(
+            "Sukses!",
+            "Hapus Data !",
+            "success"
+          ).then((value) => {
+            window.location.href = window.baseU+'kalibrasi';
+          });
+
+      }else{
+        swal(
+          "Sukses!",
+          "Update "+$('#nama_kalib').text()+" !",
+          "success"
+        ).then((value) => {
+          window.location.href = window.baseU+'kalibrasi';
+        });
+      }
     }
   });
 }

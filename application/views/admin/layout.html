@@ -73,11 +73,28 @@
 					        </div>
 					        <div class="modal-body">
                         <!-- <h5 class="card-title">Grid Rows</h5> -->
+                        <input type="hidden" id="id_ssd">
+
                             <div class="form-row">
                                 <div class="col-md-6">
                                   <div class="position-relative form-group">
+                                    <label class="card-title">Tahun</label>
+                                    <select id="ssd_tahun" class="form-control">
+                                      <option value="0">-Pilih-</option>
+                                      <option value="Penyusunan Regulasi">Penyusunan Regulasi</option>
+                                      <option value="Peraturan Dinas">Peraturan Dinas</option>
+                                      <option value="SOP">SOP</option>
+                                      <option value="Standar Keselamatan">Standar Keselamatan</option>
+                                      <option value="Kajian terkait keselamatan sarana, prasarana, dan operasional perkeretaapian">Kajian terkait keselamatan sarana, prasarana, dan operasional perkeretaapian</option>
+                                    </select>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="form-row">
+                                <div class="col-md-6">
+                                  <div class="position-relative form-group">
                                     <label class="card-title">Indikator</label>
-                                    <select id="ssd_indikator_1" class="multiselect-dropdown form-control">
+                                    <select id="ssd_indikator_1" class="form-control">
                                       <option value="0">-Pilih-</option>
                                       <option value="Penyusunan Regulasi">Penyusunan Regulasi</option>
                                       <option value="Peraturan Dinas">Peraturan Dinas</option>
@@ -90,7 +107,7 @@
                                 <div class="col-md-6">
                                   <div class="position-relative form-group">
                                     <label class="card-title">Keterangan</label>
-                                    <select id="ssd_keterangan" class="multiselect-dropdown form-control">
+                                    <select id="ssd_keterangan" class="form-control">
                                       <option value="0">-Pilih-</option>
                                       <option value="Penyusunan Regulasi">Penyusunan Regulasi</option>
                                       <option value="Peraturan Dinas">Peraturan Dinas</option>
@@ -103,7 +120,7 @@
                                 <div class="col-md-4">
                                   <div class="position-relative form-group">
                                     <label class="card-title">Satuan</label>
-                                    <select id="ssd_satuan" class="multiselect-dropdown form-control">
+                                    <select id="ssd_satuan" class="form-control">
                                       <option value="0">-Pilih-</option>
                                       <option value="angka">Angka</option>
                                       <option value="%">%</option>
@@ -112,21 +129,27 @@
                                 </div>
                                 <div class="col-md-4">
                                   <div class="position-relative form-group">
-                                      <label for="exampleState" class="card-title">Formula</label>
-                                      <input id="ssd_formula" name="state" id="exampleState" type="text" class="form-control">
+                                      <label class="card-title">Formula</label>
+                                      <select id="ssd_formula" class="form-control">
+                                        <option value="0">-Pilih-</option>
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
+                                      </select>
                                   </div>
                                 </div>
                                 <div class="col-md-4">
                                   <div class="position-relative form-group">
                                     <label class="card-title">Prioritas</label>
-                                    <select id="ssd_prioritas" class="multiselect-dropdown form-control">
+                                    <select id="ssd_prioritas" class="form-control">
                                       <option value="0">-Pilih-</option>
                                       <option value="heigh">Heigh</option>
                                       <option value="low">Low</option>
                                     </select>
                                   </div>
                                 </div>
-                                <div class="col-md-6">
+                                <!-- <div class="col-md-6">
                                   <div class="position-relative form-group">
                                       <label for="exampleState" class="card-title">Target</label>
                                       <input id="ssd_target" name="state" id="exampleState" type="text" class="form-control">
@@ -149,7 +172,7 @@
                                       <label for="exampleState" class="card-title">Realisasi</label>
                                       <input id="ssd_realisasi" name="state" id="exampleState" type="text" class="form-control">
                                   </div>
-                                </div>
+                                </div> -->
                             </div>
 					        </div>
 					        <div class="modal-footer">
@@ -708,6 +731,35 @@
                       <div class="modal-footer">
                           <button type="button" class="btn btn-secondary" data-dismiss="modal">close</button>
                           <a type="button" class="btn btn-primary" id="donlot-dong" target="_blank">Download</a>
+                      </div>
+                  </div>
+              </div>
+            </div>
+    <div class="modal fade" id="modalkalib-alatukur" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal-dialog modal-xs" role="document">
+                  <div class="modal-content">
+                      <div class="modal-header">
+                          <h5 class="modal-title" id="exampleModalLabel">Pemilik ALat Ukur</h5>
+                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                              <span aria-hidden="true">&times;</span>
+                          </button>
+                      </div>
+                      <div class="modal-body">
+                            <!-- <h5 class="card-title">Grid Rows</h5> -->
+                            <input type="hidden" id="id_kalib">
+                                <div class="form-row">
+                                    <div class="col-md-12">
+                                      <div class="position-relative form-group">
+                                        <label class="card-title">Nama</label>
+                                        <input id="kalib_pemilik" name="state" type="text" class="form-control">
+
+                                      </div>
+                                    </div>
+                                </div>
+                      </div>
+                      <div class="modal-footer">
+                          <button type="button" class="btn btn-secondary" data-dismiss="modal">close</button>
+                          <button type="button" class="btn btn-primary" id="save-pemilik" target="_blank">Save</button>
                       </div>
                   </div>
               </div>

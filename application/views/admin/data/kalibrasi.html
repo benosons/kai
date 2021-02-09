@@ -20,34 +20,14 @@
 												<span class="btn-icon-wrapper pr-2 opacity-7">
 														<i class="fa fa-business-time fa-w-20"></i>
 												</span>
-												Buttons
+												Tambah
 										</button>
 										<div tabindex="-1" role="menu" aria-hidden="true" class="dropdown-menu dropdown-menu-right">
 												<ul class="nav flex-column">
 														<li class="nav-item">
-																<a class="nav-link">
+																<a class="nav-link" data-toggle="modal" data-target="#modalkalib-alatukur">
 																		<i class="nav-link-icon lnr-inbox"></i>
-																		<span> Inbox</span>
-																		<div class="ml-auto badge badge-pill badge-secondary">86</div>
-																</a>
-														</li>
-														<li class="nav-item">
-																<a class="nav-link">
-																		<i class="nav-link-icon lnr-book"></i>
-																		<span> Book</span>
-																		<div class="ml-auto badge badge-pill badge-danger">5</div>
-																</a>
-														</li>
-														<li class="nav-item">
-																<a class="nav-link">
-																		<i class="nav-link-icon lnr-picture"></i>
-																		<span> Picture</span>
-																</a>
-														</li>
-														<li class="nav-item">
-																<a disabled class="nav-link disabled">
-																		<i class="nav-link-icon lnr-file-empty"></i>
-																		<span> File Disabled</span>
+																		<span> Pemilik Alat Ukur</span>
 																</a>
 														</li>
 												</ul>
@@ -56,7 +36,7 @@
 						</div>
 					</div>
 		</div>
-		<button hidden id="modal-kalib" type="button" data-toggle="modal" data-target="#modalkalibrasi" class="btn-shadow dropdown-toggle btn btn-info">Tambah</button>           
+		<button hidden id="modal-kalib" type="button" data-toggle="modal" data-target="#modalkalibrasi" class="btn-shadow dropdown-toggle btn btn-info">Tambah</button>
 		<div class="main-card mb-3 card">
 				<div class="card-body">
 						<table style="width: 100%;" id="list-kalibrasi" class="table table-hover table-striped table-bordered">
@@ -70,6 +50,7 @@
 										<th>DITERIMA</th>
 										<th>DITOLAK</th>
 										<th>TOTAL</th>
+										<th>ACTION</th>
 								</tr>
 								</thead>
 						</table>
