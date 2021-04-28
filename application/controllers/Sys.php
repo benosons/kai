@@ -55,6 +55,7 @@ class Sys extends CI_Controller {
 		if ( $this->logged)
 		{
 			if( $this->role == '10' || $this->role == '20' || $this->role == '30'){
+				$this->content['js'] = $this->content['baseURL'].'assets/js/action/dashboard/index.js';
 				$this->twig->display('admin/dashboard/index.html', $this->content);
 			}else{
 				redirect("/");

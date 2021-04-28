@@ -528,4 +528,16 @@ class Model_json extends CI_Model {
         return $valid;
     }
 
+    public function loadess($param)
+    {
+        $nama = $this->session->userdata('id');
+        $kategori = $this->session->userdata('kategori');
+        $id = $this->db->escape_str($nama);
+        $param = $param['param'];
+
+        $query = $this->db->query("select * from ssdi where type = '$param' order by id desc")->result();
+
+        return $query;
+    }
+
 }

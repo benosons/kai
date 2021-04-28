@@ -601,7 +601,7 @@ class Json extends CI_Controller {
 		if($params->param['pemilik']){
 			$data = $this->Model_json->savekalibrasi($params->param);
 		}else if($params->param['mode'] == 'delete'){
-			
+
 			$data = $this->Model_json->deletekalibrasi($params->param);
 		}else{
 			$data = $this->Model_json->updatekalibrasi($params->param);
@@ -611,6 +611,24 @@ class Json extends CI_Controller {
 		header('Content-Type: application/json');
 		echo json_encode(array("status" => TRUE));
 
+	}
+
+	public function loadess(){
+
+			$params = $this->input->post();
+			$postData = $this->input->post('param');
+			if($params['param'] == 'dokumen'){
+				$query = $this->Model_json->loaddokumen($params);
+			}else if($params['param'] == 'rka'){
+				$query = $this->Model_json->loadrka($params);
+			}else if($params['param'] == 'ess'){
+				$query = $this->Model_json->loadess($params);
+			}
+
+			$data = $query;
+
+			header('Content-Type: application/json');
+			echo json_encode($data);
 	}
 
 }
