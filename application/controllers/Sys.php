@@ -65,6 +65,21 @@ class Sys extends CI_Controller {
 		}
 	}
 
+	public function dashboard1()
+	{
+		if ( $this->logged)
+		{
+			if( $this->role == '10' || $this->role == '20' || $this->role == '30'){
+				$this->content['js'] = $this->content['baseURL'].'assets/js/action/dashboard/index_1.js';
+				$this->twig->display('admin/dashboard/index_1.html', $this->content);
+			}else{
+				redirect("/");
+			}
+		}else{
+			redirect("logout");
+		}
+	}
+
 	public function profile()
 	{
 		if ( $this->logged)

@@ -1,5 +1,5 @@
 $( document ).ready(function() {
-  $('#menu-dashboard').addClass('mm-active');
+  $('#menu-dash-ssd').addClass('mm-active');
   // getdash('kalibrasi');
   dash('radialBar','chart-apex-radial');
   dash('radialBar','chart-apex-radial-1');
